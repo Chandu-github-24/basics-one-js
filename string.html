@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Strings</h1>
+    <h3 id="demo"></h3>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    <p id="demo18"></p>
+
+    <script>
+        // strings declaration   
+        let stringone = "hello world";
+        let stringtwo = 'chandu"s code';
+        let string = "its's easy ";
+        let name = "Raj";
+        let string3 = "it\"s difficult coz of slashes'\s"
+        document.getElementById("demo").innerHTML = stringone + "<br>" + stringtwo + "<br>"
+            + string3 + "<br>" + string + "<br>" + name;
+
+        let fruit = "apple";
+        document.getElementById("demo1").innerHTML = fruit.length;
+
+        let a = "green";
+        let b = new String("green")// new string is an object 
+
+        document.getElementById("demo2").innerHTML = (a == b);
+
+        let c = "color";
+        let d = new String("color");
+
+        document.getElementById("demo3").innerHTML = (c === d);
+        // triple equals (===)compares data type and value as well   
+
+        //slice
+        let originalString = "Johnny IS Walking "
+
+        let slice = originalString.slice(4, 15);
+
+        document.getElementById("demo4").innerHTML = slice;
+
+        //substring
+        let substring = originalString.substring(4, 15);
+        document.getElementById("demo5").innerHTML = substring;
+        // substr
+        let substr = originalString.substring(4, 15);
+        document.getElementById("demo6").innerHTML = substr;
+        // replace 
+
+
+        let replace = originalString.replace("johnny", "robin");
+        document.getElementById("demo7").innerHTML = replace;
+        // replace all
+        let replaceALL = originalString.replaceAll("n", "q");
+        document.getElementById("demo8").innerHTML = replaceALL;
+
+        // uppercase
+        let uppercase = originalString.toUpperCase();
+        document.getElementById("demo9").textContent = uppercase;
+        // lowercase
+        let lowercase = originalString.toLowerCase();
+        document.getElementById("demo10").textContent = lowercase;
+
+        // concationation 
+
+        let concate = originalString.concat(string, string3);
+        document.getElementById("demo11").innerText = concate;
+
+
+        // trim . trimstart, trimend
+
+        let use = '  n is a factorial   '
+
+        let trim = use.trim();
+        document.getElementById("demo12").innerHTML = trim;
+
+        let trimstart = use.trimStart();
+        document.getElementById("demo13").innerHTML = trimstart;
+        let trimend = use.trimEnd();
+        document.getElementById("demo14").innerHTML = trimend;
+
+        //   pad start 
+
+        let pad = 30;
+        let padchar = "-"
+
+        let padding="hii"
+
+        let padstart = padding.padStart(pad,padchar);
+
+        document.getElementById("demo15").innerHTML = padstart;
+        // pad end 
+
+        let padend = padding.padEnd(pad, padchar);
+        document.getElementById("demo16").innerHTML = padend;
+
+    </script>
+</body>
+
+</html>

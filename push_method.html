@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>push </h1>
+    <h1 id="demo"></h1>
+    <h2 id="demo1"></h2>
+
+    <button onclick="myfunc()">try this push </button>
+    <button onclick="myfuncone()">try this push using index </button>
+    <script>
+        let fruit = ['apple', 'orange', 'grapes', 'pineapple']
+        document.getElementById("demo").innerHTML = fruit
+        function myfunc() {
+            let pushing = fruit.push("guava")
+            document.getElementById("demo").innerHTML = fruit;
+        }
+
+// ---------------------------------
+        let veg = ["potato","tomato","onion"]
+        document.getElementById("demo1").innerHTML= veg;
+
+        function myfuncone() {
+            let index = veg[veg.length]
+            veg[veg.length]= "brinjal";
+            document.getElementById("demo1").innerHTML= veg
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+.hall_ticket{
+    background-color: #167986;
+    
+    border: 2px solid #167986;
+    border-radius: 20px;
+    height: 400px;
+    width: 200px;
+}
+div{
+    text-align: center;
+ margin: auto;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>looping in array </h1>
+    <p id="demo1"></p>
+
+    <script>
+        let fruit = ["apple", "orange", "grapes", "pineapple"]
+        let flength = fruit.length
+
+        let text = "<ul>";
+        for (let i = 0; i < flength; i++) {
+            text += "<li>" + fruit[i] + "</li>";
+        }
+        text += "</ul>"
+
+        document.getElementById("demo1").innerHTML = text;
+    </script>
+</body>
+
+</html>

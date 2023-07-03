@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>object-methods</h1>
+    <h1 id ="demo">object-methods</h1>
+    <script>
+        let car={
+            model:"xuv",
+            color:"red",
+            brand:"tata",
+            engine:"bs4",
+            trunk:"hatchback",
+            fuel:"ev",
+            tyres:function (){
+                return "this is a brand new car "+ this.model;
+
+            }
+
+        }
+let feature = car.tyres()
+
+        car.fuel="petrol"
+        document.write(car.fuel)
+        document.getElementById("demo").innerHTML = feature
+    </script>
+</body>
+</html>

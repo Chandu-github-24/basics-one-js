@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    function paramter with return
+    <p id="demo"> </p>
+    <p id="dem1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+        function add(a, b) {
+            return a + b
+        }
+        let sum = add(3, 5)
+        document.getElementById("demo").innerHTML = "the value by adding two nums: " + sum
+
+
+        function sub(a, b) {
+            return a - b
+        }
+
+        let diff = sub(8, 6)
+        document.getElementById("dem1").innerHTML = "the value by subtracting two nums: " + diff
+
+        function multi(a, b) {
+            return a * b
+        }
+
+        let multiplication = multi(3, 4)
+        document.getElementById("demo2").innerHTML = "the value by multiplying two nums: " + multiplication
+
+        function divide(a, b) {
+            return b / a
+        }
+        let division = divide(4, 8)
+
+        document.getElementById("demo3").innerHTML = "the value by dividing two nums: " + division
+    </script>
+</body>
+
+</html>

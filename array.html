@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JS ARRAYS</h1>
+    <h1>Bracket indexing</h1>
+    <h1>Array to string</h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    <p id="demo18"></p>
+    <script>
+        // syntax ------------------------const array_name=[item1,item2,item3,.......]
+
+        const colors = ["green", "red", "blue", "pink", "white"];
+        document.getElementById("demo1").innerHTML = colors;
+
+        const fruits = [
+            "grapes",
+            "apple",
+            "banana",
+            "melons",
+            "gauva"
+        ];
+        document.getElementById("demo2").innerHTML = fruits;
+
+
+
+        const pens = []
+        pens[0] = "dotPen",
+            pens[1] = "inkPen",
+            pens[2] = "gelPen",
+
+            document.getElementById("demo3").innerHTML = pens;
+
+
+        const games = new Array("carrom,ludo,cricket,TT,badminton");
+        document.getElementById("demo4").innerHTML = games;
+
+
+        let smartphone = ['samsung', "apple", "one+", "mi"]
+        document.getElementById("demo5").innerHTML = smartphone[0] + "<br>" + smartphone[1];
+        // ------------------------------------------------------------------------------------------
+        smartphone[0] = "realme"
+        document.getElementById("demo6").innerHTML = smartphone;
+
+
+        const people=["name",25,"male"];
+        document.getElementById("demo6").innerHTML= people[1];
+
+        let person = {
+            name:"raj",
+            age:25,
+            occupation:"student",
+        }
+        document.getElementById("demo7").innerHTML = person.name;
+
+
+let vegetables=["potato","tomato","onion","brinjal"]
+
+document.getElementById("demo8").innerHTML= vegetables.toString();
+let alpha = vegetables.toString()
+console.log(typeof alpha);
+// ----------------------------------------------------
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String</h1>
+    <h3 id="demo"></h3>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    <p id="demo18"></p>
+
+    <script>
+        let stringname= "apples are usually red";
+        let index = 4;
+        let text = "a1,b1,c1,d1,e1,f1,g1";
+        let text1 = "a1_b1_c1_d1";
+        let char = stringname.charAt(index)
+        document.getElementById("demo").innerHTML = " character :- "+char
+
+        let charcaterat = stringname.charCodeAt(index)
+        document.getElementById("demo1").innerHTML= charcaterat
+
+
+        let splitting = text.split(",")
+        document.getElementById("demo2").innerHTML = splitting[5]
+        splitting1 = text1.split("_")
+        document.getElementById("demo3").innerHTML = splitting1[1]
+    </script>
+</body>
+</html>

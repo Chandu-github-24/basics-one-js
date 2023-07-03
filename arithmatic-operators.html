@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthematic operators</title>
+</head>
+<body>
+    <h1>Arthematic operators</h1>
+    <p id="add">addittion</p>
+    <p id="sub">subtraction</p>
+    <p id="multi">multiplication</p>
+    <p id="division">division</p>
+    <p id="modulus">modulus</p>
+    <p id="incr">increment</p>
+    <p id="decre">decrement</p>
+
+    <p id = exp>exponention</p>
+    <p id = result></p>
+    <p id="result1"></p>
+    <p id = result2></p>
+
+
+    <script>
+        //addition
+        let juice= 50;
+        let water= 20;
+        let total = juice+water;
+        document.getElementById("add").innerHTML= "the total bill of snacks is " + total +" addition"
+    // subtraction 
+
+    let weightinmoon= 100;
+    let weightinearth= 70;
+    let differenceinweight= weightinmoon-weightinearth;
+    document.getElementById("sub").innerHTML = "the difference in weight is "+differenceinweight+ " subtraction"
+
+
+    // multiplication
+
+    let firstrow = 6
+    let secondrow= 12
+    let table = firstrow*secondrow
+    document.getElementById("multi").innerHTML="the table consists of "+ table + "students multiplication"
+
+    // division 
+    let classofstudents=100
+    let chocolates= 200
+
+    let eachstudent= (chocolates/classofstudents );
+    document.getElementById("division").innerHTML =" each student gets " + eachstudent + " division"
+
+
+    // modulus
+
+
+    let num1 = 10;
+    let num2 = 3;
+
+    let modulus = num1%num2;
+    document.getElementById("modulus").innerHTML= "the remainder by dividing two  nos is" + modulus
+
+    //increment
+
+    let salary = 2000;
+    let incrementofsalary = ++salary;
+
+    document.getElementById("incr").innerHTML= "the salary got incremented by "+ incrementofsalary
+
+    // decrement 
+
+
+    let sweets=30;
+    let sweetseaten =--sweets;
+
+    document.getElementById("decre").innerHTML="the sweets eaten is "+ sweetseaten
+
+
+    // exponential
+    let a = 4
+    let b = 5
+    let c= 6
+    let d = 12
+
+    let result = ((a**b)/c)+((d-c)/a);
+    document.getElementById("result").innerHTML= "result:-" + result
+
+    let result1 = ((a**b)**c)/(d+c);
+    document.getElementById("result1").innerHTML = "resultone:- " + result1
+
+    let result2= (c**d)+a;
+document.getElementById("result2").innerHTML= "resulttwo:- " + result2
+    
+    
+    </script>
+</body>
+</html>
