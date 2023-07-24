@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>advanced js key value pair </h1>
+    <script>
+        let student = {
+            name: "john",
+            age: 20,
+            major: "computers",
+            gpa: 5.6,
+            clg: "AIT",
+        }
+
+
+        function displaystudentInfo() {
+            document.getElementById("output").innerHTML = `name : ${student.name} <br>
+            age : ${student.age} <br>
+            major : ${student.major}<br>
+            gpa : ${student.gpa} <br>
+            college : ${student.clg} `;
+        }
+
+        function updateStudentInfo() {
+            const name = document.getElementById("nameInput").value;
+            const age = parseInt(document.getElementById("ageinput").value);
+            const major = document.getElementById("majorinput").value;
+            const gpa = parseFloat(document.getElementById("gpainput").value);
+            const clg = document.getElementById("clgInput").value;
+
+
+            if ((name.trim() === "") || isNaN(age) || age <= 0 || major.trim() === "" || isNaN(gpa) || gpa < 0 || gpa > 9) {
+
+                alert("please enter all the fields");
+                return;
+            }
+
+            student.name = name;
+            student.age = age;
+            student.major = major;
+            student.gpa = gpa;
+            student.clg = clg;
+
+            displaystudentInfo();
+
+        }
+
+    </script>
+    <h2>student info</h2>
+    <label for="nameInput">NAME</label>
+    <input type="text" id="nameInput" value="john"><br><br>
+    <label for="ageinput">AGE</label>
+    <input type="number" id="ageinput" value="20"><br><br>
+    <label for="majorinput">MAJOR</label>
+    <input type="text" id="majorinput" value="computers"><br><br>
+
+    <label for="gpainput">GPA</label>
+    <input type="number" id="gpainput" step="0.02" value="3.9"><br><br>
+
+    <label for="clgInput">COLLEGE</label>
+    <input type="text" id="clgInput" value="AIT"><br><br>
+
+    <button onclick="updateStudentInfo()">update student info</button><br><br>
+
+    <div id="output"></div>
+
+</body>
+
+</html>

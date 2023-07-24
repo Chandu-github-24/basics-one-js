@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>for loop</h1>
+    <h2>for in </h2>
+    <h2>for of </h2>
+    <p id="demo"></p>
+    <h2 style="color: red;">iterate objects through loops important for in </h2>
+    <h2>while loops</h2>
+    <h2>do while </h2>
+    <p></p>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <script>
+        let text = "";
+        for (i = 5; i <= 10; i++) {
+            text += "the number is " + i + " <br> "
+
+        }
+        document.getElementById("demo").innerHTML = text;
+
+        // <!-- for in loop to iterate over an object  -->
+
+
+        const person = {
+            name: "rajvamshi",
+            nickname: "RV",
+            age: 24,
+            married: false,
+        }
+        let text1 = " ";
+        for (let key in person) {
+
+            text1 += person[key] + " ";
+        }
+        document.getElementById("demo1").innerHTML = text1;
+
+
+        // for of loops for arrays
+
+        let vehicles = ["2wheelers", "3 wheelers", "4wheelers"];
+
+        let vehicle = " "
+        for (let element of vehicles) {
+            vehicle += element + " ";
+
+        }
+        document.getElementById("demo2").innerHTML = vehicle;
+
+        let cars = ["lambo", "benz", "mercedez"];
+
+        let text2 = " "
+
+        for (let x of cars) {
+            text2 += x + " ";
+        }
+
+        document.getElementById("demo3").innerHTML = text2;
+
+        //  while & do while 
+        // while entry ctrl   & do-while exit ctrl
+
+
+        let wloop = "";
+        let j = 1;
+        while (j < 10) {
+
+            wloop += " while loop " + j + "<br>";
+            j++;
+        }
+        document.getElementById("demo4").innerHTML = wloop;
+        //  do while loop 
+
+
+        let k = 0;
+        let doWhileLoop = " ";
+        do {
+            doWhileLoop += " do while " + k + "<br>";
+            k++;
+        } while (k < 10);
+        document.getElementById("demo5").innerHTML = doWhileLoop;
+        //  break statement 
+
+        let breakStatement = " "
+
+        for (let m = 1; m < 10; m++) {
+
+            if (m === 3) { break; }
+
+            breakStatement += "<br>" + "execute the loops using break " + m;
+
+
+        }
+
+        document.getElementById("demo6").innerHTML = breakStatement;
+        //  continue
+
+
+        let text4 = " ";
+
+        for (let p = 1; p < 10; p++) {
+            if (p == 4) { continue; }
+            text4 += "continue " + p + " <br>";
+        }
+        document.getElementById("demo7").innerHTML = text4;
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>SORT()</h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <script>
+        // sort()
+        let dictionary = ["raj", "kamal", "rahul", "ram", "tejas"]
+        let dictionary_one = dictionary.sort();
+        document.getElementById("demo1").innerHTML = dictionary_one;
+
+        // reverse () 
+        //  no  descending order 
+        //  hence , sort and then reverse it 
+
+        let phonecontact = ["charan", "ramya", "radhika", "apparna", "bhavya"]
+        let descending = phonecontact.sort()
+
+        let descendingone = descending.reverse()
+        document.getElementById("demo2").innerHTML = descendingone;
+
+
+
+        // sort for numerical values in ascending order 
+
+        let number = ["15", "20", "80", "30", "1", "19", "3", "12"]
+        document.getElementById("demo3").innerHTML = number + "  :-   original  order of nos "
+        number.sort(function (a, b) { return (a - b) })
+        document.getElementById("demo4").innerHTML = number + "  :-   ascending  sorted values of number"
+
+        // sort for numerical values in descending order 
+
+        number.sort(function (a, b) { return (b - a) })
+        document.getElementById("demo6").innerHTML = number + "   :-   descending  sorted values of number"
+
+
+
+    </script>
+</body>
+
+</html>

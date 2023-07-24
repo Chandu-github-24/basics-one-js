@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>advanced array 1</h1>
+    <button onclick="even()">even </button>
+    <p id="demo"></p>
+    <button onclick="odd()">odd</button>
+    <script>
+
+        function findevennumbers(number) {
+            const evennumber = [];
+            for (let i = 0; i < number.length; i++) {
+                if (number[i] % 2 === 0) {
+                    evennumber.push(number[i]);
+                }
+            }
+            return evennumber;
+        }
+
+        function findoddnumber(number) {
+            const oddnumber = [];
+            for (let i = 0; i < number.length; i++) {
+                if (number[i] % 2 != 0) {
+                    oddnumber.push(number[i]);
+                }
+            }
+            return oddnumber;
+        }
+        // data array 
+        const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // find even nos
+        const evennumber = findevennumbers(number);
+        function even() {
+            document.getElementById("demo").innerHTML = evennumber;
+        };
+        const oddnumber = findoddnumber(number);
+        function odd() {
+            document.getElementById("demo").innerHTML = oddnumber;
+        }
+
+
+
+
+        let array1 = [12, 34, 89, 123];
+        let array2 = [38, 66, 43, 45];
+
+
+        let concating = array1.concat(array2);
+        console.log(concating);
+
+        //  find max value in concated array
+
+        let maxValue = Math.max(...concating);
+        console.log(maxValue); 
+
+        //  find if a particular value is present 
+
+        const particularValue = 2 
+
+        const theVAlue = concating.includes(particularValue);
+        console.log(`${theVAlue}   the value found is ${particularValue} `)
+
+
+
+    </script>
+</body>
+
+</html>

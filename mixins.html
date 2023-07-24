@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>MIXINS</h1>
+    <script>
+        class fruit {
+            constructor(name) {
+                this.name = name;
+
+            }
+            //  method 
+
+            addsugar() {
+                console.log("sugar is added ");
+            }
+        }
+        // define a mixin object
+        //  mixin is used to add functionality without inherting the entire parent class 
+        const fruitmixing = {
+            addwater(){
+                console.log("add water ");
+            },
+
+            addmilk (){
+                console.log("adding milk ");
+            }
+        }
+
+        // create a class and add mixing 
+
+        class mango {
+            constructor(name){
+                this.name =name;
+
+            }
+        }
+        //  apply mising to the mango class
+
+Object.assign(mango.prototype,fruitmixing);
+//  create an instance of mango 
+const mangoshake = new mango("fruits")
+
+//  call mixing method
+mangoshake.addmilk();
+mangoshake.addwater();
+
+
+    </script>
+</body>
+
+</html>

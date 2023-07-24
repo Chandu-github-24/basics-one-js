@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> SET operator<br>
+        set is a collection of unique values
+        each values can occur only ones </h1>
+    <h1>for each </h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+
+
+</body>
+<script>
+    // create a set 
+    let chasisnum = new Set(["modelX0", "model90", "modelAS23"]);
+    // display size of set 
+    document.getElementById("demo1").innerHTML = chasisnum.size;
+    // set is a collection of unique values
+    // each values can occur only ones 
+
+
+    // adding variable to sets 
+    let metropillarnumber = new Set()
+
+    metropillarnumber.add(24)
+    metropillarnumber.add(25)
+    metropillarnumber.add(26)
+    metropillarnumber.add(27)
+    metropillarnumber.add(26)
+    metropillarnumber.add(27)
+    metropillarnumber.add(28)
+    document.getElementById("demo2").innerHTML = metropillarnumber.size;
+
+
+
+    // 
+
+
+    let stdid = new Set();
+    //  create variable 
+
+    let studentofclass1 = "gopal"
+    let studentofclass2 = "krish"
+    let studentofclass3 = "ashwini"
+    let studentofclass4 = "ramesh"
+    let studentofclass5 = "ashiwini"
+    let studentofclass6 = "roopa"
+
+    stdid.add(studentofclass1)
+    stdid.add(studentofclass2)
+    stdid.add(studentofclass3)
+    stdid.add(studentofclass4)
+    stdid.add(studentofclass5)
+    stdid.add(studentofclass6)
+
+    document.getElementById("demo3").innerHTML = stdid.size;
+
+    //  for each in set
+    //  in sets duplicate value wont be displayed 
+    //  shopping list real life example 
+
+    let alphabets = new Set(["a", "b", "c", "a", "e", "c", "f", "A"]);
+
+    text = " ";
+
+    alphabets.forEach(function (a) {
+        text += a + "<br>"
+    })
+
+    document.getElementById("demo4").innerHTML = text;
+
+
+
+</script>
+
+</html>

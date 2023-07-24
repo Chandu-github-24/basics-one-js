@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>objects</h1>
+    <h1 id="demo"></h1>
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+    <h1 id="demo3"></h1>
+    <h1 id="demo4"></h1>
+    <script>
+        const person = {
+            name: "rahul",
+            age: 40,
+            DOB: "24-01-2020",
+        };
+        document.getElementById("demo1").innerHTML = person.age;
+    
+
+        const pencil = {}
+        pencil.color = "red";
+        pencil.shape = "round";
+        pencil.brand = "hb";
+        document.getElementById("demo2").innerHTML = "the color of the pencil is " 
+        + pencil.color  
+        //   " and " + pencil.shape 
+        //  + " in shape" + "its from " + pencil.brand ;
+       + "and"+ pencil.shape + " in shape " + " from " + pencil.brand;
+
+       const  people ={
+        name : "kp",
+        age :50,
+        age:30,
+        place:"AP",
+        hairstyle:"curly",
+
+       }
+       document.getElementById("demo3").innerHTML = people.name + " is a name " + " and age is " + people.age
+
+
+    </script>
+</body>
+
+</html>

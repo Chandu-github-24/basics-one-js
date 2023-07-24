@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>IIFE - immediate invoke function expression </h2>
+    <h5>function can be called/ invoked automatically without being called </h5>
+    <h1>function</h1>
+    <h1 id="demo"></h1>
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+    <h1 id="demo3"></h1>
+    <h1 id="demo4"></h1>
+    <h1 id="demo5"></h1>
+    <h1 id="demo6"></h1>
+    <h1 id="demo7"></h1>
+    <h1 id="demo8"></h1>
+    <h1 id="demo9"></h1>
+    <h1 id="demo10"></h1>
+    <h1 id="demo11"></h1>
+    <h1 id="demo12"></h1>
+    <h1 id="demo13"></h1>
+    <h1 id="demo14"></h1>
+    <h1 id="demo15"></h1>
+    <h1 id="demo16"></h1>
+    <h1 id="demo17"></h1>
+    <h1 id="demo18"></h1>
+    <h1 id="demo19"></h1>
+
+    <script>
+        // 1st method to define function
+
+        let addittion = add(12, 6);
+        let subtraction = sub(12, 5);
+        function add(a, b) {
+            return (a + b)
+        };
+        document.getElementById("demo1").innerHTML = "addittion:-" + addittion;
+
+
+
+
+        function sub(r, t) {
+            return (r - t)
+        }
+        document.getElementById("demo2").innerHTML = "subtraction:-" + subtraction;
+
+
+        let modulo = mod(4, 2);
+        let multiplication = multiply(9, 5)
+
+
+        function div(l, m) {
+            return (l / m);
+        };
+        let division = div(8, 4)
+        document.getElementById("demo3").innerHTML = "division:-" + division;
+
+        function multiply(e, f) {
+            return (e * f)
+
+        }
+        document.getElementById("demo4").innerHTML = "multiplication:-" + multiplication;
+
+        document.getElementById("demo5").innerHTML = "modulo:-" + modulo;
+        function mod(g, h) {
+            return (g % h)
+        }
+
+        // 2nd method to define function
+
+        const adding = new Function("a", "b", "return a+b");
+        document.getElementById("demo5").innerHTML = adding(3, 5);
+
+        const multiplying = new Function("a", "b", "c", "return (a*b*c)");
+        document.getElementById("demo6").innerHTML = multiplying(3, 5, 8);
+
+        const dividing = new Function("a", "b", "c", "d", "return (a/b/c/d)");
+        document.getElementById("demo7").innerHTML = dividing(3, 5, 8, 34);
+
+        const moduling = new Function("a", "b", "return a % b");
+        document.getElementById("demo8").innerHTML = moduling(3, 5);
+
+        // 3rd method to define function 
+
+
+        // function can be called/ invoked automatically without being called 
+
+        (function () {
+            document.getElementById("demo9").innerHTML = "good morning";
+            document.getElementById("demo10").innerHTML = "good night";
+            document.getElementById("demo11").innerHTML = "good afternoon";
+            document.getElementById("demo12").innerHTML = "good day";
+        }
+        )();
+
+        // ----------------------multiple function in IIFE 
+
+        (function () {
+
+
+            document.getElementById("demo13").innerHTML = "hello everyone";
+
+
+
+            let calculation = performingcal(6, 10, 12);
+
+            document.getElementById("demo14").innerHTML = calculation;
+
+            function performingcal(a, b, c) {
+                return (a + b + c);
+
+            };
+
+            let name = prompt("enter your name ");
+            let greetings = create(name);
+
+            document.getElementById("demo15").innerHTML = greetings;
+
+            function create(name) {
+                return "hello" + name;
+            }
+
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>spread operator similar to concatination
+        only difference in syntax (...spread) </h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <script>
+        let continent1 = ["asia", "antartica"];
+        let continent2 = ["northamerica", "southamerica"];
+        let continent3 = ["africa", "europe"];
+        let continent4 = ["australia"];
+
+        let spread = [...continent2, ...continent1, ...continent3, ...continent4]
+
+        document.getElementById("demo1").innerHTML = spread;
+
+    </script>
+</body>
+
+</html>

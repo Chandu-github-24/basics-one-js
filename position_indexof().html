@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>lastindex of() & position:- to get position add +1 </h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <script>
+        let queue = ["man", "women", "kid", "oldaged"];
+        // let change = queue.lastIndexOf("women") + 1;
+        let position = queue.lastIndexOf("women") + 1;
+        document.getElementById("demo1").innerText = ` women is in position ${position}`;
+    </script>
+</body>
+
+</html>

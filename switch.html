@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>switch statement</h1>
+    <h1 id="demo"></h1>
+    <button onclick="getfruit()">click here to get fruit </button>
+    <p id="result"></p>
+    <script>
+        let day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "sunday"
+
+                break;
+            case 1:
+                day = "Monday"
+
+                break;
+            case 2:
+                day = "tuesday"
+
+                break;
+            case 3:
+                day = "wednesday"
+
+                break;
+            case 4:
+                day = "thursday"
+
+                break;
+            case 5:
+                day = "friday"
+
+                break;
+            case 6:
+                day = "Sunday"
+
+                break;
+
+            default:
+                break;
+        }
+
+        document.getElementById("demo").innerHTML = day;
+
+
+        //  switch for games and fruits ;
+        // console.log(Math.floor(Math.random() * 4) +1)
+
+
+        function getfruit() {
+            let randomfruit = Math.floor(Math.random() * 6) + 1;
+            let resultsToEatFruit = document.getElementById("result");
+
+            var fruit;
+            switch (randomfruit) {
+                case 1:
+                    {
+                        fruit = "apple";
+                        break;
+                    }
+
+                case 2:
+                    {
+                        fruit = "orange";
+                        break;
+                    }
+                case 3:
+                    {
+                        fruit = "banana";
+                        break;
+                    }
+                case 4:
+                    {
+                        fruit = "grapes";
+                        break;
+                    }
+                case 5:
+                    {
+                        fruit = "guava";
+                        break;
+                    }
+
+                default: {
+                    fruit = "unknown fruit ";
+                }
+
+            }
+            resultsToEatFruit.innerText = fruit;
+            // document.getElementById("result").innerHTML = fruit;
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

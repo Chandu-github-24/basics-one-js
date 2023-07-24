@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>mixingoperation for calculation </h1>
+    <script>
+        const calOperationMixing = {
+            add(a, b) {
+                return (a + b);
+            },
+
+            multiplication(a, b) {
+                return (a * b)
+            },
+
+            division(a, b) {
+                return (a / b)
+            },
+
+            sub(a, b) {
+                return (a - b);
+            },
+        }
+        //  creating a class and applying mixing operator 
+
+        class mathematics {
+
+        }
+
+        Object.assign(mathematics.prototype, calOperationMixing);
+        //  create an instance for mathematics
+
+        const maths = new mathematics();
+
+        //  use mixin methods
+        console.log(maths.add(7, 9))
+        console.log(maths.sub(7, 9))
+        console.log(maths.multiplication(7, 9))
+        console.log(maths.division(7, 9))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>push and pop</h1>
+    <p id="demo"></p>
+ <button onclick="pusharr()" id ="push">PUSH</button>
+ <button onclick="poparr()" id = "pop">POP</button>
+ <button onclick="cleararr()" id = "clear">Clear Array</button>
+
+    <script>
+
+        let array = ["a", "b", "c", "d", "e"]
+        document.getElementById("demo").innerHTML = array;
+     
+
+function poparr(){
+     let poparray = array.pop("e");
+    document.getElementById("demo").innerHTML =   alert(`${poparray}`);
+    document.getElementById("demo").innerHTML = array;
+  
+}
+      
+
+ function pusharr(){
+
+    let pusharr = array.push("f")
+    document.getElementById("demo").innerHTML =  alert(`${pusharr}`);
+    document.getElementById("demo").innerHTML = array;
+
+ }
+
+ function cleararr(){
+
+    let array = [];
+    document.getElementById("demo").innerHTML =   alert(` empty ${array}`);
+    document.getElementById("demo").innerHTML = " array is empty ";
+ }
+
+
+
+    </script>
+</body>
+
+</html>

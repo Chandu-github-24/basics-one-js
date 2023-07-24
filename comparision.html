@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>IF ELSE </h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <label for="num">Enter your marks</label>
+    <input type="number" id="num">
+    <!-- <input type="number" id="num"> -->
+    <button onclick="calculateGrade()">click here</button>
+    <p id="result">RESULT:-</p>
+    <script>
+        function calculateGrade() {
+
+            let marksInput = document.getElementById("num");
+            let marks = parseInt(marksInput.value);
+            var resultELEMENT = document.getElementById("result");
+
+
+            if (isNaN(marks)) {
+                resultELEMENT.innerText = "please enter a valid number";
+
+            } else if (marks >= 90) {
+                resultELEMENT.innerText = "you secured Grade A";
+
+            }
+            else if (marks >= 80) {
+                resultELEMENT.innerText = "you secured Grade B";
+            }
+
+            else if (marks >= 70) {
+                resultELEMENT.innerText = "you secured Grade C";
+            }
+
+            else if (marks >= 60) {
+                resultELEMENT.innerText = "you secured Grade D";
+            }
+            else if (marks >= 50) {
+                resultELEMENT.innerText = "you secured Grade E";
+            }
+            else {
+                resultELEMENT.innerText = "practice more and secure better marks ";
+
+            }
+
+        }
+        var num = 14;
+        if (num > 0) {
+            // document.write("number is positive");
+            document.getElementById("demo1").innerHTML = "number is positive";
+
+        }
+        else if (num <= 0) {
+            document.write("number is negative");
+            document.getElementById("demo1").innerHTML = "number is negative";
+        }
+        else {
+            document.write("number is zero");
+            document.getElementById("demo1").innerHTML = "number is zero";
+        };
+
+        let time = 11;
+        if (time >= 12) {
+            document.getElementById("demo2").innerHTML = "login after 12 o'clock"
+            // `${time}login after 12 o'clock`;
+
+
+        }
+        else if (time < 12) {
+            document.getElementById("demo2").innerHTML = "login before 12 o'clock";
+        }
+        else {
+            document.getElementById("demo2").innerHTML = "missed login";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JOIN()</h1>
+    <h3 id="demo"></h3>
+    <h1>concat</h1>
+    <p id="demo1"></p>
+
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <h1> Array.slice() returns selected array elements as a new array:</h1>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+
+
+    <script>
+
+        let color = ["green", "red", "blue", "yellow"]
+
+        document.getElementById("demo").innerHTML = color.join("    /    ")
+        // concating arrays 
+        let arr1 = ["a", "b", "c"]
+        let arr2 = ["d", "e", "f"]
+        let arr3 = ["i", "h", "g"]
+
+        let a = "string"
+        let b = "boolean"
+        document.getElementById("demo2").innerHTML = a + b
+
+        let concatingarray = arr1.concat(arr2, arr3);
+        document.getElementById("demo1").innerHTML = concatingarray;
+        // splice 
+
+
+        let cars = ["honda", "bmw", "audi", "mercedez", "benz", "jaguar"]
+
+        let usingSplice = cars.splice(2, 3, "maruthi", "rangerover")
+
+
+        document.getElementById("demo3").innerHTML = cars + "<br>" + usingSplice
+
+
+        // slice 
+        let letter = ["a", "b", "c", "d", "e", "f"]
+
+        let removeUsingSlice = letter.slice(2, 5)
+
+
+        // Array.slice() returns selected array elements as a new array:
+        document.getElementById("demo4").innerHTML = "sliced elements :- " + removeUsingSlice
+
+        consle.log(letter);
+    </script>
+</body>
+
+</html>

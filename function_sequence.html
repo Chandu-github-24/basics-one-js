@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>function is executed in the order called </h1>
+    <h1 id="demo"></h1>
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+    <h1 id="demo3"></h1>
+    <h1 id="demo4"></h1>
+    <h1 id="demo5"></h1>
+    <script>
+        function myDisplay(valueOFSum) {
+            document.getElementById("demo").innerHTML = valueOFSum;
+
+        }
+
+        function cal(num1, num2) {
+            let sum = num1 + num2;
+            return sum;
+        }
+        let result = cal(5, 5);
+        myDisplay(result)
+        // ------------------------------------
+
+        function mydisplayer(value) {
+            document.getElementById("demo1").innerHTML = value;
+        }
+
+        function calculation(num1, num2) {
+            let multiply = num1 * num2;
+            mydisplayer(multiply)
+        }
+
+        calculation(10, 4)
+        // timeout function 
+
+        setTimeout(greeting, 3000)
+        function greeting() {
+            document.getElementById("demo2").innerHTML = "hello";
+            // return "hello"
+        }
+        // document.getElementById("demo3").innerHTML=  greeting();
+
+
+    </script>
+</body>
+
+</html>

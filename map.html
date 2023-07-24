@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>MAP</h1>
+    <h1>create a map from array</h1>
+    <p id="demo"></p>
+    <h1> 2nd way MAP.set()</h1>
+    <p id="demo1"></p>
+    <h1  onclick="clcik()"></h1>
+    <script>
+             
+        let fruits = new Map([
+            ["apples", 500],
+            ["grapes", 200],
+            ["oranges", 650],
+            ["muskmelon", 60],
+            ["apples", 700],
+        ]);
+        document.getElementById("demo").innerHTML = fruits.get("apples");
+
+        //  2nd way MAP.set()
+
+
+        let veg = new Map()
+        function clcik(a, b) {
+    
+        veg.set("onion", 90)
+        veg.set("potato", 900)
+        veg.set("brinjal", 690)
+        veg.set("brinjal", 30)
+        return   veg.get(a, b)
+        document.getElementById("demo1").innerHTML = veg.get("onion");
+        }
+       
+
+
+
+
+    </script>
+</body>
+
+</html>

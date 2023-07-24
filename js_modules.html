@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="demo"></h1>
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+    <script type="module">
+        import { id, badgecolor } from "./badge.js"
+        import { id1, badgecolor1 } from "./badge1.js";
+        import message from "./message.js";
+
+        let employee = "my id " + id + " my badgecolor " + badgecolor;
+        let employee1 = "my id " + id1 + " my badgecolor " + badgecolor1;
+
+
+        document.getElementById("demo").innerHTML = employee;
+        document.getElementById("demo1").innerHTML = employee1;
+        document.getElementById("demo2").innerHTML = message();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

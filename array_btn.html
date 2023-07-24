@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>displaying using btns</h1>
+    <button onclick="concat()">Concate Arrays</button>
+    <button onclick="total()">Calculate Sum</button>
+    <button onclick="reverseArray()">Reverse Array</button>
+    <p id="demo"></p>
+    <script>
+
+        let concatedarray = []
+
+        const concat = () => {
+            const array1 = [1, 2, 3];
+            const array2 = [4, 5, 6];
+
+          concatedarray = [...array1, ...array2];
+            displayresult("concated array " + concatedarray.join(", "));
+        }
+        //  cal the sum
+
+        const total = () =>{
+            const sum = concatedarray.reduce((acc, cv) => acc + cv , 0);
+            displayresult("sum "+ sum );
+        }
+
+
+        const reverseArray = () =>{
+            concatedarray.reverse();
+            displayresult("reverseARRAY " + concatedarray.join(", ")) ;
+        }
+
+        const displayresult = (result) =>{ 
+            const resultcontainer = document.getElementById("demo");
+            resultcontainer.innerText = result;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Store</title>
+</head>
+
+<body>
+    <h1>Furniture Store </h1>
+
+    <div>
+        <label for="addkey">ADD KEY :- </label>
+        <input type="text" id="addkey">
+        <label for="addvalue">ADD VALUE :- </label>
+        <input type="text" id="addvalue">
+        <button onclick="addkey()">Add key-value pair</button>
+    </div>
+
+    <div>
+        <label for="searchKEY">SEARCH KEY:- </label>
+        <input type="text" id="searchKEY">
+        <button onclick="search()">Search</button>
+    </div>
+    <div>
+        <label for="RemoveKEY">REMOVE KEY:- </label>
+        <input type="text" id="RemoveKEY">
+        <button onclick="removekey()">REMOVE key-value pair</button>
+    </div>
+    <button onclick="displaySET()">display set</button>
+    <p id="demo"></p>
+
+
+
+    <script>
+
+        let store = new Map();
+
+        function addkey() {
+            const a = document.getElementById("addkey");
+            const b = document.getElementById("addvalue");
+
+            const c = a.value;
+            const d = b.value;
+
+            const mapping = store.set(a,b)
+            document.getElementById("demo").innerHTML = mapping;
+            // c + " " + d;
+
+            a.value = "";
+            b.value = "";
+
+        }
+
+        function removekey(){
+
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

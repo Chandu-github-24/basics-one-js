@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>nested objects</h1>
+    <h1 id="demo"></h1>
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+    <h1 id="demo3"></h1>
+    <h1 id="demo4"></h1>
+    <h1 id="demo5"></h1>
+    <h1 id="demo6"></h1>
+    <h1 id="demo7"></h1>
+    <h1 id="demo8"></h1>
+    <h1 id="demo9"></h1>
+    <h1 id="demo10"></h1>
+    <h1 id="demo11"></h1>
+    <h1 id="demo12"></h1>
+    <h1 id="demo13"></h1>
+    <h1 id="demo14"></h1>
+    <h1 id="demo15"></h1>
+    <h1 id="demo16"></h1>
+    <h1 id="demo17"></h1>
+    <h1 id="demo18"></h1>
+    <h1 id="demo19"></h1>
+
+ 
+
+    <script>
+        // function inside objects 1st method 
+
+        const webPage = {
+            name: "code shastra institute",
+            course: "fullstack",
+            duration: "6weeks",
+            greet: function () {
+                return this.course + " in " + this.name;
+            },
+        };
+        document.getElementById("demo").innerHTML = webPage.greet();
+
+
+        // function inside objects 2nd method 
+
+        const vendor = {
+            venodrName: "sareestores",
+            location: "shivmogga",
+            vacancy: 6,
+
+        };
+        vendor.welcome = function () {
+            return (this.venodrName + "is in " + vendor.location).toUpperCase();
+        }
+        document.getElementById("demo1").innerHTML = vendor.welcome();
+
+        // acessing values from objects 
+        // 1st mtd 
+        const juicecenter = {
+            type: "fruit",
+            cost: 100,
+            icecream: "1 scoop",
+            time: "24*7"
+        }
+        document.getElementById("demo3").innerHTML = juicecenter.cost + " " + juicecenter.icecream + " " + " " + juicecenter.time
+        // 2nd mtd 
+
+        const person = {
+            name: "abcd",
+            age: 40,
+            location: "new zeland",
+        }
+        let txt = ""
+        for (let y in person) {
+            txt += person[y] + " ";
+        };
+        document.getElementById("demo2").innerHTML = txt;
+        // 3rd method objects.values
+
+        const map = {
+            direection: "NEWS",
+            cost: 10,
+            westernghats: "mountain",
+        };
+        document.getElementById("demo3").innerHTML = Object.values(map);
+
+        // 4th method stringifyJSON
+        let stringfy = JSON.stringify(map);
+        document.getElementById("demo4").innerHTML = stringfy;
+
+
+        //  get and set in objects 
+        //  get method 
+
+
+        const bbq = {
+            meals: "unlimited",
+            timings: "12-3",
+            type: "non veg & veg",
+            get food() {
+                return this.meals
+            }
+        }
+        document.getElementById("demo5").innerHTML = bbq.food;
+
+        //  set 
+        const watch = {
+            hand: "small and big",
+            format: "hrs:mins:secs",
+            set time(value) {
+                this.format = value;
+            }
+        }
+
+        watch.time = "mins:sec:hrs"
+
+        document.getElementById("demo6").innerHTML = watch.format;
+        // practie set 
+
+        const Petshop = {
+            pet: "dogs only",
+            time: "half day",
+            govtaided: true,
+
+            set inclusion(cats) {
+                return this.pet = cats;
+            }
+        }
+        Petshop.inclusion = "dogs , cats are added recently ";
+        document.getElementById("demo7").innerHTML = Petshop.pet;
+
+
+
+        //   practice set again 
+
+
+
+        const travelAgency = {
+            type: "tours and travles",
+            tripTo: "delhi",
+            tripFrom: "bengaluru",
+            hrsOfJrny: 12,
+            set ChangeINDesti(destination) {
+                this.tripTo = destination;
+            },
+        };
+
+        // set a ppty using set 
+        travelAgency.ChangeINDesti = "munnar"
+        document.getElementById("demo8").innerHTML = travelAgency.tripTo;
+
+
+        //  using function(constructor) for more objects 
+
+        function Person(eye, height, weight, name) {
+            this.eyecolor = eye;
+            this.height = height;
+            this.fullName = name;
+            this.weight = weight;
+
+        }
+        let boy = new Person("blue", "6ft", "72kg", "mourya");
+        let girl = new Person("red", "5.6ft", "60kg", "adithi");
+        let adult = new Person("green", "7ft", "82kg", "sharmila");
+        let women = new Person("pink", "6.5ft", "75kg", "sowmya");
+        let man = new Person("white", "5ft", "87kg", "richard");
+
+        document.getElementById("demo9").innerHTML = boy.eyecolor + " color of eyes for " + boy.fullName
+            + " " + girl.weight + " full name:-" + adult.fullName + " " + man.weight;
+
+        //  add a ppty inside constructor 
+
+        Person.prototype.haircolor = "black";
+
+        document.getElementById("demo10").innerHTML = boy.fullName + " has " + boy.haircolor
+            + " hair ";
+
+        //  task 
+
+        function employee(name, role, expereience,) {
+            this.fullName = name;
+            this.designation = role;
+            this.expereience = expereience;
+
+        }
+        employee.prototype.calsalary = function () {
+            const basesalary = 3000;
+            const expereienceBonus = this.expereience * 500;
+            return basesalary + expereienceBonus;
+        }
+
+
+        const employee1 = new employee("jithendra", "intern", 2);
+        const employee2 = new employee("sharma", "web-intern", 1);
+       
+      function   salries() {
+        let totalSalary = employee1.calsalary() + employee2.calsalary() ;
+        document.getElementById("demo11").innerHTML = "total salary :- " + totalSalary ;
+
+
+        }
+
+
+    </script>
+       <button onclick="salries()"> total salary </button>
+</body>
+
+</html>

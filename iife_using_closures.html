@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+ 
+    <script>
+        const counterModule = (function () {
+            let count = 0;
+
+
+            function increment() {
+                count++;
+                // console.log(" count: ", count);
+                document.getElementById("value").innerHTML = counterModule.increment()
+            }
+            function decrement() {
+                count--;
+                // console.log(" count: ", count);
+                document.getElementById("value").innerHTML = counterModule.decrement()
+            }
+            return {
+                increment,
+                decrement
+            };
+        })();
+      
+     
+
+    </script>
+       <div>
+        <button onclick='increment()'>+</button>
+        <p id="value"></p>
+        <button onclick="decrement()">-</button>
+    </div>
+</body>
+
+</html>

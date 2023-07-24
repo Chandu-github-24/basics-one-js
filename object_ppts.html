@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>difft ways to acess object ppts</h1>
+    <h1 id="demo"></h1>
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+    <h1 id="demo3"></h1>
+    <h1 id="demo4"></h1>
+    <h1 id="demo5"></h1>
+    <h1 id="demo6"></h1>
+
+<script>
+        // 1st way as usual person.name
+
+        const person = {
+            firstName: "ram",
+            age: 67,
+            city: "mumbai",
+        };
+
+        const iceCreamShop = {
+            type: "cone",
+            noOfShops: 12,
+            shift: "part time",
+        }
+
+
+        document.getElementById("demo1").innerHTML = person.firstName + "is my name i live in " + person.city;
+        document.getElementById("demo2").innerHTML = "the type of icecream we sell is "
+            + iceCreamShop.type + " we sell it on  " + iceCreamShop.shift;
+
+
+        // 2nd type usine person["firstname"]
+
+
+        const school = {
+            standard: " 10th std",
+            sport: "kabbadi",
+            ranking: 2,
+
+        }
+        document.getElementById("demo3").innerHTML = "our " + school["standard"]
+            + " kids have secured " + school["ranking"] + " in " + school["sport"];
+        // adding a new ppty to an exsiting object
+
+
+
+        const sweetShop = {
+            name: "sweetsshop",
+            place: "bangalore",
+            onlineDelievery: false,
+
+        }
+        const bakery = {
+            name: "sweetsshop",
+            place: "bangalore",
+            onlineDelievery: false,
+
+        }
+        const lassi = {
+            name: "lassishop",
+            place: "bangalore",
+            onlineDelievery: true,
+
+        }
+
+        lassi.gst = "ZADD12454O98";
+
+        document.getElementById("demo4").innerHTML = " gst number of " + lassi.name +
+            " " + lassi.gst;
+        // delete a ppty person.delete :age;
+
+
+        const medicalStore = {
+            name: "med+",
+            location: "bengalurur",
+            tablets: true,
+            discount: "10%",
+        }
+
+        delete medicalStore.location
+        document.getElementById("demo5").innerHTML = " medical store "
+            + medicalStore.location
+
+        // nested object  => object within an object 
+
+        const office = {
+            place: "karnataka",
+            distance: 25,
+            building: {
+                building1: "tarus1",
+                building2: "tarus2",
+                building3: "tarus3",
+            },
+            employess: {
+                employeName: "raj",
+                employeAge: 32,
+                employeLocation: "bengaluru",
+            },
+            transportation: "metro",
+
+        };
+
+
+        document.getElementById("demo6").innerHTML = office.building.building1  + " another set "+
+        office.employess.employeAge  ;
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>try and catch</h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <script>
+        try {
+            const vehicles = ["honda","dia","access","activa"]
+            vehicles = ["hero","suzuki","jupitrt"]
+            document.getElementById("demo1").innerHTML = vehicles
+            console.log(vehicles)
+            
+        } catch (error) {
+            document.getElementById("demo2").innerHTML = error
+            console.log(error)
+        }
+
+        try{
+            var liquid = ["juice","water","milk"]
+            liquid =["cream","salads"]
+            document.getElementById("demo3").innerHTML = liquid
+            console.log(liquid)
+
+        }
+        catch (err) {
+
+            document.getElementById("demo4").innerHTML = err
+            console.log(err)
+
+        }
+    </script> 
+</body>
+</html>

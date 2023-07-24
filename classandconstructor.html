@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>class & Constructor </h1>
+    <h1 id="demo"></h1>
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+    <h1 id="demo3"></h1>
+    <h1 id="demo4"></h1>
+    <h1 id="demo5"></h1>
+    <h1 id="demo6"></h1>
+    <h1 id="demo7"></h1>
+    <h1 id="demo8"></h1>
+    <h1 id="demo9"></h1>
+    <h1 id="demo10"></h1>
+    <h1 id="demo11"></h1>
+    <h1 id="demo12"></h1>
+    <h1 id="demo13"></h1>
+    <h1 id="demo14"></h1>
+    <h1 id="demo15"></h1>
+    <h1 id="demo16"></h1>
+    <h1 id="demo17"></h1>
+    <h1 id="demo18"></h1>
+    <h1 id="demo19"></h1>
+    <script>
+        class shop {
+            constructor(location, timings, type) {
+                this.place = location;
+                this.time = timings;
+                this.type = type;
+            }
+        }
+        const sweetshop = new shop("bengaluru", "9-6", "fruits");
+        const vegetableshop = new shop("karnataka", "2-6", "vegetables");
+        const Lassishop = new shop("mangalore", "6-10", "lassi&icecreams");
+        document.getElementById("demo1").innerHTML = sweetshop.place + " " + sweetshop.time +
+            " " + vegetableshop.type + " " + Lassishop.time;
+        // how to define and use a class method
+
+        class human {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            };
+
+
+            presentage() {
+                const date = new Date();
+                return date.getFullYear() - this.age;
+            }
+        }
+
+        const person = new human("chandu", 24);
+
+        document.getElementById("demo2").innerHTML = person.name
+            + " was born in  " + person.presentage();
+
+
+        //  super method 
+
+
+        class company {
+            constructor(name) {
+                this.companyName = name;
+            }
+            presentcompany() {
+                return this.companyName + " has gst number:- "
+            }
+        }
+
+
+
+        class gstNUMBER extends company {
+            constructor(name, gst) {
+                super(name);
+                this.gstnumber = gst;
+            }
+
+            currentgst() {
+                return this.presentcompany() 
+             +" "+ this.gstnumber;
+            }
+        }
+        const mycompany = new gstNUMBER("silks&sarees","X34OIUTW");
+        document.getElementById("demo3").innerHTML = mycompany.currentgst();
+
+//  static method 
+
+class tyres {
+    constructor (tyre){
+        this.typeoftyre = tyre;
+    }
+    static hello(){
+        return "good tyres are used "
+    }
+}
+
+const vehicletyre = new tyres("rubbertyres");
+document.getElementById("demo4").innerHTML = tyres.hello();
+
+    </script>
+</body>
+
+</html>

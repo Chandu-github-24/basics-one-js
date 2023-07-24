@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>class and OOPS concept </h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <script>
+        class employee {
+            constructor(joingdate, expereience) {
+                this.joingdate = joingdate;
+                this.expereience = expereience
+            }
+
+        }
+
+        const emply1 = new employee("23-5-2022", 3)
+        const emply2 = new employee("22-01-2017", 5)
+        document.getElementById("demo1").innerHTML = emply1.joingdate
+            + "   <br>   " + emply2.expereience
+
+
+        //   creating objects from 2 difft classes 
+
+        class pen {
+            constructor(type, color) {
+                this.type = type;
+                this.color = color;
+            }
+        }
+        const dotpen = new pen("dotpen", "red");
+        // const gelpen = new pen ("gelpen","green")
+
+
+
+        class employeecode {
+            constructor(digitalcode, swipingcode) {
+                this.digitalcode = digitalcode;
+                this.swipingcode = swipingcode;
+
+            }
+        }
+        const emplyoee1 = new employeecode("0013", "XOO")
+        const employee2 = new employeecode("0934", "ZVC")
+
+
+        class hrsofwork {
+            constructor(online, offline) {
+                this.online = online;
+                this.offline = offline;
+
+            }
+        }
+
+        const bestemployee = new hrsofwork(4, 9)
+        const avgemployee = new hrsofwork(3, 8)
+        const goodemployee = new hrsofwork(2, 6)
+
+
+        document.getElementById("demo2").innerHTML = dotpen.type + "<br>" +
+            emplyoee1.digitalcode + "<br>" + goodemployee.offline
+
+
+
+
+    </script>
+</body>
+
+</html>

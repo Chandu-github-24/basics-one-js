@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>sets example
+        add, remove duplicate display using set </h1>
+    <h1>create and manipulate the set </h1>
+    <div>
+        <label for="inputElement">Add element </label>
+        <input type="text" id="inputElement">
+        <button onclick="addelement()">ADD</button>
+    </div>
+
+    <div>
+        <label for="SearchELEMENT">Search element </label>
+        <input type="text" id="SearchELEMENT">
+        <button onclick="searchElement()">SEARCH</button>
+    </div>
+
+    <div>
+        <label for="RemoveELEMENT">Remove element </label>
+        <input type="text" id="RemoveELEMENT">
+        <button onclick="RemoveELEMENT()">REMOVE</button>
+    </div>
+
+    <button onclick="displaySET()">Display Set</button>
+    <p id="result"></p>
+
+
+    <script>
+        //  create empty set 
+        const myset = new Set();
+
+        function addelement() {
+            const elementINput = document.getElementById("inputElement");
+            const element = elementINput.value;
+            // check if element already exists in the set 
+
+            if (myset.has(element)) {
+                document.getElementById("result").innerHTML = "element " + element + " already exists in the set";
+            }
+            // add element to the set 
+            else {
+                myset.add(element)
+                document.getElementById("result").innerHTML = "element " + element + "  added to  the set";
+            }
+
+            // clear the input field 
+            // element = " "
+            elementINput.value = ""
+        }
+
+
+        function searchElement() {
+            const searchelement = document.getElementById("SearchELEMENT");
+            const element = searchelement.value;
+            //  check if element exists in the field 
+            if (myset.has(element)) {
+                document.getElementById("result").innerHTML = "element " + element + " exists in the set ";
+            }
+
+            else {
+                document.getElementById("result").innerHTML = "element " + element + " do not exists in the set ";
+            }
+            //  clear the input field 
+            searchelement.value = ""
+        }
+
+
+        function RemoveELEMENT() {
+            const removeElement = document.getElementById("RemoveELEMENT");
+            const element = removeElement.value;
+            //   remove element form the set 
+            const isRemoved = myset.delete(element);
+
+            if (isRemoved) {
+                document.getElementById("result").innerHTML = "element " + element + " removed from  the set ";
+            }
+            else {
+                document.getElementById("result").innerHTML = "element " + element + " do not exists in the set ";
+            }
+            //  clear the input field
+            removeElement.value = "";
+        }
+
+        //  display the set values 
+
+        function displaySET() {
+            let setvalues = "set values : ";
+            myset.forEach(function (value) {
+                setvalues += value + " ";
+            })
+            document.getElementById("result").innerHTML = setvalues;
+        }
+
+    </script>
+</body>
+
+</html>

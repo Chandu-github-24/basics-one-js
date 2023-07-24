@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ARROW FUNCTION </h1>
+    <h1 id="demo"></h1>
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+    <h1 id="demo3"></h1>
+    <h1 id="demo4"></h1>
+    <h1 id="demo5"></h1>
+    <h1 id="demo6"></h1>
+    <h1 id="demo7"></h1>
+    <h1 id="demo8"></h1>
+    <h1 id="demo9"></h1>
+    <h1 id="demo10"></h1>
+    <h1 id="demo11"></h1>
+    <h1 id="demo12"></h1>
+    <h1 id="demo13"></h1>
+    <h1 id="demo14"></h1>
+    <h1 id="demo15"></h1>
+    <h1 id="demo16"></h1>
+    <h1 id="demo17"></h1>
+    <h1 id="demo18"></h1>
+    <h1 id="demo19"></h1>
+    <script>
+        let rateOfChange = function (m, n) {
+            return m + n
+        }
+        // arrow function 
+
+        let x = (y, z) => {
+            return y + z
+        };
+        document.getElementById("demo1").innerHTML = x(5, 3);
+
+
+        document.getElementById("demo2").innerHTML = rateOfChange(6, 3);
+
+
+
+        const MathsCalucation = (a, c) => {
+            const adding = a + c;
+            const sub = a - c;
+            const div = a / c;
+            const multiply = a * c;
+            return { adding, sub, div, multiply };
+        };
+
+        const result = MathsCalucation(8, 2);
+        console.log(result.adding);
+        console.log(result.sub);
+        console.log(result.div);
+        console.log(result.multiply);
+
+
+// --------------------
+
+
+function myfun(a,b){
+    return 
+}
+    </script>
+</body>
+
+</html>

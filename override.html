@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>over ride</h1>
+    <script>
+        // parent class
+        class cars {
+            constructor() {
+                this.name = cars;
+            }
+
+
+            // method to override
+            tyre() {
+                console.log("rubber tyres");
+            }
+        }
+
+
+        //  child class one
+
+
+        class MRF extends cars {
+            // over ride the tyre method
+
+            tyre() {
+                console.log("mrf is a good tyre company")
+            }
+        }
+        //  child class 2
+
+        class CEAT extends cars {
+            // over ride the tyre method
+
+            tyre() {
+                console.log("ceat is a better tyre company ")
+            }
+        }
+        //  child class 3
+        class Bridgestone extends cars {
+            tyre() {
+                console.log("Bridgestone has  the best tyres ")
+            }
+        }
+        //  create instances of difft tyres 
+
+        const mrf = new MRF();
+
+        const ceat = new CEAT();
+
+        const Bridgestones = new Bridgestone();
+        // call the overridden mthds 
+        mrf.tyre();
+        ceat.tyre();
+        Bridgestones.tyre();
+
+    </script>
+</body>
+
+</html>

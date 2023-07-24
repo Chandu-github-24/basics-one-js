@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>closures and counters</h1>
+    <script>
+
+
+
+        function createcounter() {
+            let count = 0;
+
+            function increment() {
+                count++
+                console.log(count);
+
+            }
+            return increment;
+        }
+
+        //  create 2 counters with 2 seperate closure scopes
+
+        const cn1 = createcounter();
+        const cn2 = createcounter();
+
+        // call the increment of each function 
+
+        cn1();
+        cn2();
+        cn2();
+
+
+        function greeting(name, greet = "hello") {
+            return function () {
+                const currentDate = new Date();
+                console.log(`${greet},${name}`);
+                console.log(`present date and time : - ${currentDate}`);
+            };
+        }
+
+        //  create 2 greeting with sepearate closure forms 
+
+        const greetram = greeting("ram", "hi");
+        const greetgeetha = greeting("ram");
+        const greetsham = greeting("sham");
+
+        greetram();
+        greetgeetha();
+        greetsham();
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

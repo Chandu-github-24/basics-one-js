@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JS date</h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <script>
+        let date = new Date();
+        document.getElementById("demo1").innerHTML = date;
+
+        let custom_Date = new Date("1999-01-24")
+        //  yyyy-mm-day
+        document.getElementById("demo2").innerHTML = custom_Date;
+
+
+
+
+        let dateFormat = new Date(2014, 11, 5, 6, 73, 18, 0)
+        document.getElementById("demo3").innerHTML = dateFormat;
+
+        // if 2014 is said to be 0 then it will take 1970 as per ISO standard 
+        // the below std format is followed
+
+        //         new Date(year)
+        //         new Date(year, month)
+        //         new Date(year, month, day)
+        //         new Date(year, month, day, hours)
+        //         new Date(year, month, day, hours, minutes)
+        //         new Date(year, month, day, hours, minutes, seconds)
+        //         new Date(year, month, day, hours, minutes, seconds, millisecond)
+        // ISO Date ♣ "2015-03-25"(The International Standard)
+        // The ISO format follows a strict standard in JavaScript.
+
+        let d = new Date("2020-10-24")
+        document.getElementById("demo5").innerHTML = d;
+        document.getElementById("demo6").innerHTML = d.getFullYear();
+        document.getElementById("demo7").innerHTML = d.getMonth() + 1;
+        document.getElementById("demo8").innerHTML = d.getDate();
+        // -----------------------------------------
+        const months = ["jan", "feb", "march", "april", "may", "june", "july",
+            "aug", "sept", "oct", "nov", "dec"]
+
+        const dates = new Date("2022-03-25")
+        let month = months[dates.getMonth()];
+        document.getElementById("demo9").innerHTML = month;
+
+
+        const dating = new Date()
+        dating.setDate(1)
+        dating.setFullYear(2021, 6, 4)
+        dating.setHours(12)
+        dating.setMilliseconds(12)
+        dating.setMinutes(10)
+        dating.setMonth(9)
+        dating.setSeconds(5)
+        // dating.setTime(date.getTime())  //  sets the time to current time 
+        document.getElementById("demo10").innerHTML = dating; //  comment the above line so this works 
+
+        const day = dating.getDate()
+        const themonth = dating.getMonth()+1
+        const hrs = dating.getHours()
+        const mins = dating.getMinutes()
+        const seconds = dating.getSeconds()
+        const milliseconds = dating.getMilliseconds()
+        const YEAR = dating.getFullYear()
+        //    document.getElementById("demo10").innerHTML = YEAR;
+        //  to get the manipulated date 
+        document.write(`<h2> the manipulate date and time </h2>
+            <p>DAY: ${day} </p>
+            <p>Month: ${themonth} </p>
+            <p>hrs: ${hrs} </p>
+            <p>mins: ${mins} </p>
+            <p>seconds: ${seconds} </p>
+            <p>milliseconds: ${milliseconds} </p>
+            <p>YEAR: ${YEAR} </p> `)
+
+    </script>
+
+</body>
+
+</html>
