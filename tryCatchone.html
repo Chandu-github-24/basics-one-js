@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JS try catch</h1>
+    <label for="">Please input number b/w 5 & 10</label><br><br>
+    <input type="text" id="output">
+    <button onclick="btn()">Test Input</button>
+    <p id="result"></p>
+
+    <script>
+        function btn() {
+            const message = document.getElementById("result");
+            message.innerHTML = "";
+            let x = document.getElementById("output").value;
+            // document.getElementById("output").value=""
+
+            try {
+                if (x.trim() == "") throw "empty";
+                if (isNaN(x)) throw "not a number";
+                if (x < 5) throw "too low";
+                if (x > 10) throw "too high";
+            } catch (error) {
+                message.innerHTML = "input is " + error;
+            //   document.getElementById("result").innerHTML = "input is " + error;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

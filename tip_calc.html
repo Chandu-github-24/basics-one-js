@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tip Calculator</h1>
+    <label for="">Bill Amount :- </label>
+    <input type="number" id="output"><br><br>
+
+    <label for="tips">Tip Percentage : -</label>
+    <select name="tips" id="tips">
+        <option value=""> </option>
+        <option value="10%">10%</option>
+        <option value="20%">20%</option>
+        <option value="30%">30%</option>
+        <option value="40%">40%</option>
+    </select>
+    <br><br>
+    <button onclick="calTip()">Calculate total with tip</button>
+    <p id="result"></p>
+
+</body>
+<script>
+
+    // let tipHotel = "";
+
+
+    function calTip() {
+        let billAmt = document.getElementById("output").value;
+        // if bill amount is less than 1000 not eligible for tip 
+        if (billAmt <= 1000) {
+
+            document.getElementById("result").innerHTML =
+                //  "tq for the bill amount" + billAmt
+                "if bill amount is less than " + billAmt + " not eligible for tip";
+
+        } else {
+            let tip1 = document.getElementById("tips").value;
+            let tip2 = parseInt(tip1);
+            let tip3 = billAmt * (tip2 / 100);
+            console.log(tip3)
+            let calculation = parseInt(billAmt) + parseInt(tip3);
+            console.log(calculation)
+            document.getElementById("result").innerHTML = calculation + " good tip tq";
+        }
+
+
+    }
+
+
+</script>
+
+</html>

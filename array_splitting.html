@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>array splitting</h1>
+    <h3>team batting first will have advantage </h3>
+
+    <script>
+        function splittingOfArray() {
+            var input = document.getElementById("split").value.split(',');
+            var number = Math.ceil(input.length / 2);
+            var firstInnings = input.slice(0,number);
+            var secondInnings = input.slice(number);
+            document.getElementById("result").innerHTML = `first innings ${firstInnings} <br>
+            second inning : ${secondInnings}`
+        }
+    </script>
+
+
+    <label for="split">enter the no of overs sepearet each one by comma:-</label>
+    <input type="text" id="split"><br>
+
+    <button onclick="splittingOfArray()">click here </button>
+    <p id="result"></p>
+</body>
+
+</html>

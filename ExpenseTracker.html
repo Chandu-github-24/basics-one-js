@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        /* div{
+            display: flex;
+            /* justify-content: center; */
+        /* text-align: center; 
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>Expense Tracker</h1>
+    <div>
+        <label for="desc">Description : - </label>
+        <input type="text" id="desc">
+        <br><br>
+        <label for="amt">Amount : - </label>
+        <input type="number" id="amt"><br><br>
+    </div>
+
+    <button onclick="transcation()">Add transcation</button>
+    <div>
+        total amount <p id="output"></p>
+    </div>
+    <div>
+        transcation <h1 id="result"></h1>
+    </div>
+
+
+    <script>
+        function transcation() {
+
+            let descriptionTask = document.getElementById("desc").value;
+
+            document.getElementById("result").innerHTML = descriptionTask;
+
+            document.getElementById("desc").value = "";
+
+            let moneyAdded = document.getElementById("amt").value;
+
+            document.getElementById("output").innerHTML = moneyAdded;
+
+            document.getElementById("amt").value = ""
+
+        }
+    </script>
+
+</body>
+
+</html>

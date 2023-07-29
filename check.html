@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="">
+    </head>
+<body>
+    <style>
+        html {
+            text-align: center;
+        }
+    </style>
+    <h1>Mini Project Furniture Store</h1>
+    <div>
+        <label for="elementKey">Add Key:</label>
+        <input type="text" id="elementKey">
+        <label for="elementValue">Add Value:</label>
+        <input type="text" id="elementValue">
+        <button onclick="addKeyValuePair()">Add Key Value Pair</button>
+    </div>
+    <br>
+    <div>
+        <label for="searchInput">Search Key:</label>
+        <input type="text" id="searchInput">
+        <button onclick="searchElement()">Search</button>
+    </div>
+    <br>
+    <div>
+        <label for="removeElement">Remove Key:</label>
+        <input type="text" id="removeElement">
+        <button onclick="removeElement()">Remove KeyValue Pair</button>
+    </div>
+    <br>
+    <div>
+        <button onclick="displayMap()">Display Map</button>
+    </div>
+    <br>
+
+    <div id="confirmationMessage"></div>
+
+
+    <script>
+        // Define a map variable
+        const furnitureStore = new Map();
+
+        // Function to add key-value pair to the map
+        function addKeyValuePair() {
+            const keyInput = document.getElementById('elementKey');
+            const valueInput = document.getElementById('elementValue');
+            const key = keyInput.value;
+            const value = valueInput.value;
+            furnitureStore.set(key, value);
+            keyInput.value = '';
+            valueInput.value = '';
+            document.getElementById('confirmationMessage').innerHTML = key + ' added successfully!';
+        }
+
+        // Function to search for a key in the map
+        function searchElement() {
+            const searchInput = document.getElementById('searchInput');
+            const searchKey = searchInput.value;
+            if (furnitureStore.has(searchKey)) {
+                document.getElementById('confirmationMessage').innerHTML = ` ${searchKey}, ${furnitureStore.get(searchKey)}`;
+            } else {
+                document.getElementById('confirmationMessage').innerHTML = 'Key not found';
+            }
+            searchInput.value = '';
+        }
+
+        // Function to remove a key-value pair from the map
+        function removeElement() {
+            const removeInput = document.getElementById('removeElement');
+            const removeKey = removeInput.value;
+            if (furnitureStore.has(removeKey)) {
+                furnitureStore.delete(removeKey);
+                document.getElementById('confirmationMessage').innerHTML = removeKey + ' removed successfully!';
+            } else {
+                document.getElementById('confirmationMessage').innerHTML = removeKey + ' not found';
+            }
+            removeInput.value = '';
+        }
+
+        // Function to display the map
+        function displayMap() {
+            const mapValues = Array.from(furnitureStore.entries());
+            const displayDiv = document.getElementById('confirmationMessage');
+            displayDiv.innerHTML = '';
+            mapValues.forEach(([key, value]) => {
+                const paragraph = document.createElement('p');
+                paragraph.innerHTML = key + ", " + value;
+                displayDiv.appendChild(paragraph);
+            });
+        }
+    </script>
+
+
+</body>
+</html>

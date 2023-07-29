@@ -15,7 +15,7 @@
         <input type="text" id="addkey">
         <label for="addvalue">ADD VALUE :- </label>
         <input type="text" id="addvalue">
-        <button onclick="addkey()">Add key-value pair</button>
+        <button onclick="addkeyValuepair()">Add key-value pair</button>
     </div>
 
     <div>
@@ -29,33 +29,84 @@
         <button onclick="removekey()">REMOVE key-value pair</button>
     </div>
     <button onclick="displaySET()">display set</button>
-    <p id="demo"></p>
-
-
+    <p id="output"></p>
 
     <script>
 
-        let store = new Map();
+        //  create empty set 
+        const furnitureStore = new Map();
 
-        function addkey() {
-            const a = document.getElementById("addkey");
-            const b = document.getElementById("addvalue");
+        function addkeyValuepair() {
+            const keyInputvalue = document.getElementById("addkey");
+            const valueInputvalue = document.getElementById("addvalue");
+            const key = keyInputvalue.value;
+            const value = valueInputvalue.value;
 
-            const c = a.value;
-            const d = b.value;
+            // check if element already exists in the set 
 
-            const mapping = store.set(a,b)
-            document.getElementById("demo").innerHTML = mapping;
-            // c + " " + d;
+            // if (furnitureStore.has( key,value)) {
+            //     document.getElementById("output").innerHTML = key + ":- cost : - " + value + " already exists in the set";
+            
 
-            a.value = "";
-            b.value = "";
+            // }
+            // add element to the set 
+            // else {
+                furnitureStore.set(key, value);
 
+                document.getElementById("output").innerHTML = "furniture : - " + key + " - cost :-  " + value
+                    + " is added to  the list";
+            // }
+
+            // clear the input field 
+
+            keyInputvalue.value = "";
+            valueInputvalue.value = "";
         }
 
-        function removekey(){
+
+        function search() {
+            const searchelement = document.getElementById("searchKEY");
+            // const elementvalue = document.getElementById("addvalue");
+
+            const element = searchelement.value
+            // + ":" + elementvalue.value;
+            //  check if element exists in the field 
+            if (furnitureStore.has(element)) {
+                document.getElementById("output").innerHTML = "element " + element + " exists in the set ";
+            }
+
+            else {
+                document.getElementById("output").innerHTML = "element " + element + " do not exists in the set ";
+            }
+            //  clear the input field 
+            searchelement.value = ""
+        }
 
 
+        function removekey() {
+            const removeElement = document.getElementById("RemoveKEY");
+            const element = removeElement.value;
+            //   remove element form the set 
+            const isRemoved = furnitureStore.delete(element);
+
+            if (isRemoved) {
+                document.getElementById("output").innerHTML = "element " + element + " removed from  the set ";
+            }
+            else {
+                document.getElementById("output").innerHTML = "element " + element + " do not exists in the set ";
+            }
+            //  clear the input field
+            removeElement.value = "";
+        }
+
+        //  display the set values 
+
+        function displaySET() {
+            let setvalues = "set values : ";
+            furnitureStore.forEach(function (value, key) {
+                setvalues += "<br>" + key + ": " + value + "<br>";
+            })
+            document.getElementById("output").innerHTML = setvalues;
         }
 
 

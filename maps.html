@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>MAPS</h1>
+    <h3 id="demo"></h3>
+    <h3 id="demo1"></h3>
+    <h3 id="demo2"></h3>
+    <h3 id="demo3"></h3>
+    <script>
+        // delete using maps and check size
+
+        const fruits = new Map([
+            ["oranges", 200],
+            ["grapes", 1200],
+            ["guava", 20],
+            ["muskmelon", 500],
+
+        ]);
+
+        fruits.delete("guava");
+
+        document.getElementById("demo").innerHTML = fruits.size;
+        document.getElementById("demo1").innerHTML = fruits.has("muskmelon");
+        document.getElementById("demo2").innerHTML = fruits.has("watermelon");
+
+        //  loop through key value pair to display 
+
+
+        let text = " ";
+
+        fruits.forEach(function(value, key){
+          text +=   key + " = " + value + "<br>"
+        })
+
+        document.getElementById("demo3").innerHTML =  text; 
+
+
+
+    </script>
+</body>
+
+</html>

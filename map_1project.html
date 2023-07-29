@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>furniture shop</h1>
+    <label for="addingkey">add key</label>
+    <input type="text" id="addingkey">
+    <label for="addingvalue">add value</label>
+    <input type="text" id="addingvalue">
+    <button onclick="addkeyvaluePair()">add key-value pair</button><br><br>
+
+    <label for="searchkey">search key</label>
+    <input type="text" id="searchkey">
+    <button onclick="searchingkey()"> search </button><br><br>
+
+    <label for="removeKey">remove key</label>
+    <input type="text" id="removeKey">
+    <button onclick="removingKey()"> remove key-value pair </button><br><br>
+
+    <button onclick="display()">display result</button>
+
+    <p id="output"></p>
+
+
+
+    <script>
+        let myFurnitureStore = new Map();
+
+        function addkeyvaluePair() {
+            let inputKey = document.getElementById("addingkey");
+            let inputValue = document.getElementById("addingvalue");
+
+            let key = inputKey.value;
+            let Value = inputValue.value;
+
+            myFurnitureStore.set(key, Value);
+            inputKey.value = "";
+            inputValue.value = "";
+
+            document.getElementById("output").innerHTML = key + " furniture " + "cost :- " + Value;
+
+        }
+
+
+        function searchingkey() {
+
+            let InputSearch = document.getElementById("searchkey");
+            let searchKEy = InputSearch.value;
+
+            if (myFurnitureStore.has(searchKEy)) {
+                document.getElementById("output").innerHTML = searchKEy + "  already exists ";
+
+
+            } else {
+                document.getElementById("output").innerHTML = searchKEy + " does not  exists ";
+            }
+
+        }
+
+
+        function removingKey() {
+            let remove = document.getElementById("removeKey");
+            let removedKey = remove.value;
+            let deleting = myFurnitureStore.delete(removedKey);
+
+            if (deleting) {
+                document.getElementById("output").innerHTML = removedKey + " is deleted  ";
+
+            } else {
+                document.getElementById("output").innerHTML = removedKey + " doesnt exists  ";
+
+            }
+        }
+
+        function display() {
+
+            let set = " set ";
+            // myFurnitureStore.forEach(function (value, key) {
+            myFurnitureStore.forEach(function (a, b) {
+                set += " <br> " + b + a;
+            })
+
+
+            document.getElementById("output").innerHTML = set;
+
+        }
+
+
+    </script>
+</body>
+
+</html>

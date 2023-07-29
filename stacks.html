@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Stacks</h1>
+
+  <script>
+    var element = [];
+    function push() {
+      var stack = document.getElementById("pushing").value;
+      element.push(stack);
+      document.getElementById("output").innerHTML = `list of chemicals ${element}`
+      document.getElementById("pushing").value = "";
+    }
+
+    function pop() {
+      if (element.length > 0) {
+        element.pop()
+        document.getElementById("output").innerHTML = `list of chemicals ${element}`
+      }
+      else {
+        document.getElementById("output").innerHTML = `list of chemicals are empty `
+      }
+
+
+
+    }
+
+  </script>
+
+
+  <label for="pushing">enter the chemicals to be pushed </label>
+  <input type="text" id="pushing"><br><br>
+  <button onclick="push()">pushing the chemicals </button><br>
+  <br>
+
+  <button onclick="pop()">pops the chemicals</button>
+  <p id="output"></p>
+
+</body>
+
+</html>

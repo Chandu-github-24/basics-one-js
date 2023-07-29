@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Deque :- double ended queue</h1>
+    <script>
+
+        var q = [];
+
+        function enqFront() {
+
+            let element = document.getElementById("valueOfElement").value;
+            q.unshift(element);
+
+            document.getElementById("output").innerHTML = element
+            document.getElementById("output").value = "";
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <label for="">enter the values to the q </label>
+    <input type="text" id="valueOfElement">
+    <br><br>
+    <button onclick="enqFront()">Enq Front </button><br><br>
+    <button onclick="enqBack()">Enq Rear </button><br><br>
+    <button onclick="DqFront()">DQ Front </button><br><br>
+    <button onclick="DqBack()">DQ Rear </button>
+    <p id="output"></p>
+
+</body>
+
+</html>

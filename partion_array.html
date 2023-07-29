@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>partition array</h1>
+    <script>
+
+        function partioning() {
+            var inputArray = document.getElementById("divide").value.split(',');
+            var partion = Number(document.getElementById("partionVAlue").value);
+
+            var kids = [];
+            var adult = [];
+
+            for (var i = 0 ; i < inputArray.length; i++){
+                if (Number(inputArray[i])< partion){
+                    kids.push(inputArray[i])
+                }
+                else{
+                    adult.push(inputArray[i])
+                }
+            }
+document.getElementById("output").innerHTML = `kids section ${kids}
+
+<br>  adults section : ${adult}`
+
+
+
+        }
+    </script>
+
+
+    <label for="divide"> enter the age seperated by commas for clothing store </label>
+    <input type="text" id="divide" /><br>
+
+    <label for="partionVAlue"> enter the value </label>
+    <input type="text" id="partionVAlue" /><br>
+    <button onclick="partioning()">clothing </button>
+    <p id="output"></p>
+</body>
+
+</html>

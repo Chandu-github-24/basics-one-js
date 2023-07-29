@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Web Page Navigation</h1>
+    <label for="output"></label>
+    <input type="text" id="output" placeholder="enter your url">
+    <button onclick="visitPage()">Visit Page</button>
+    <p id="result"></p>
+
+    <div>
+        <h1>Visited Pages (Last In first Out)</h1>
+        <button onclick="backBtn()">Go back</button>
+    </div>
+
+    <div>
+        <h1>Forward Navigation Queue (First In, First Out)</h1>
+        <button onclick="forwardBtn()">Go forward</button>
+    </div>
+
+    <script>
+        var element = [];
+        function visitPage() {
+            var Page = document.getElementById("output").value;
+            element.push(Page);
+            document.getElementById("result").innerHTML = `list of page <br> <ul> <li>  ${element} </li></ul> <br>`;
+            document.getElementById("output").value = "";
+        }
+
+
+        function backBtn() {
+
+        }
+    </script>
+</body>
+
+</html>

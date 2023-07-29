@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>recursion</h1>
+    <input type="text" id="demo" placeholder="enter a number"><br>
+
+    <button onclick="factorial()">click here to get the factorial </button>
+    <p id="output"></p>
+    <script>
+        const number = document.getElementById("demo").value;
+        
+        function factorial(number) {
+            if (number === 0 || number === 1) {
+                document.getElementById("output").innerHTML = "1";
+            }
+            // else {
+            //     // var a = document.getElementById("demo").value;
+            //     var b = number * (number - 1);
+            //     const fresult = factorial(number);
+            //     document.getElementById("output").innerHTML = fresult;
+            // }
+        }
+      
+       
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>queues</h1>
+    <h1>shift and unshift </h1>
+    <script>
+        var q = [];
+        function start() {
+            var element = document.getElementById("token").value;
+            q.push(element);
+            document.getElementById("output").innerHTML = `element ${q}`;
+            document.getElementById("token").value = "";
+
+        }
+
+        function end() {
+            if (q.length > 0) {
+                q.shift()
+                document.getElementById("output").innerHTML = `element ${q}`;
+
+            }
+            else {
+                document.getElementById("output").innerHTML = `element  is empty `;
+
+            }
+        }
+
+    </script>
+
+    <label for="token">enter an token number for the bank queue </label>
+    <input type="text" id="token"><br><br>
+    <button onclick="start()">token number at the start </button><br><br>
+    <button onclick="end()">token number at the end </button>
+    <p id="output"></p>
+</body>
+
+</html>
