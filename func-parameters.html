@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-   function using paramters 
-   <p id = "hello"></p>
-   <script>
-    function carname(name){
-     document.getElementById("hello").innerHTML = "name: "+ name
-        // document.write(name)
-    }
-    carname("maruthi")
-   </script>
+    function using paramters
+    <h1>add sub ulti div using function and calling them randomly not in the exact order </h1>
+    <p id="add"></p>
+    <p id="divide"></p>
+    <p id="sub"></p>
+    <p id="multi"></p>
+
+    <p id="hello"></p>
+    <script>
+        let B = division(3, 7);
+        document.getElementById("divide").innerHTML = B;
+
+        let A = addition(3, 7);
+        document.getElementById("add").innerHTML = A;
+
+        let D = subtraction(3, 7);
+        document.getElementById("sub").innerHTML = D;
+
+        let C = multiplication(3, 7);
+        document.getElementById("multi").innerHTML = C;
+
+
+
+        function carname(name) {
+            document.getElementById("hello").innerHTML = "name: " + name
+            // document.write(name)
+        }
+        carname("maruthi")
+        //  add sub multiplication  divide 
+        function multiplication(a, b) {
+            return (a * b);
+
+        }
+        function addition(a, b) {
+            return (a + b);
+        }
+
+        function subtraction(a, b) {
+            return (a - b);
+
+        }
+
+        function division(a, b) {
+            return (a / b);
+
+        }
+
+
+
+    </script>
 </body>
+
 </html>

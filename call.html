@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>call the variables or object ppts from the other object using call</h1>
+    <h3 id="output"></h3>
+    <p id="output1"></p>
+    <script>
+        // call
+        const person1 = {
+            NAME: function () {
+                return this.fname + " " + this.lname;
+            }
+        }
+        const person2 = {
+            fname: "mohan",
+            lname: " kumar",
+        }
+        let p = person1.NAME.call(person2);
+        document.getElementById("output").innerHTML = p;
+
+
+        //  bind
+
+        const member = {
+            fname: "giri",
+            lname: " ramverma",
+            binding: function () {
+                return this.fname + " " + this.lname;
+            }
+        }
+        const member1 = {
+            fname: "rahul",
+            lname: " tripati",
+        }
+
+        let y = member.binding.bind(member1);
+        document.getElementById("output1").innerHTML = y();
+
+    </script>
+</body>
+
+</html>

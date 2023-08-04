@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>IIFE:- immediately invoked function expression </h1>
+    <p id="result"></p>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+
+    <script>
+
+        (function () {
+            document.getElementById("result").innerText = "hello self invoked ";
+        })();
+
+        (function () {
+            let addition = calculation(5, 5);
+
+            document.getElementById("result1").innerText = addition;
+
+            document.getElementById("result2").innerText = "hello called myself";
+
+            function calculation(a, b) {
+                return a * b
+            }
+
+            const name = prompt("hello enter your name");
+
+            var greet = greeting(name);
+            document.getElementById("result3").innerText = greet;
+
+
+            function greeting(name) {
+                return ("hello my name is " + name);
+
+            }
+
+        })();
+
+    </script>
+</body>
+
+</html>

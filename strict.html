@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Strict mode</h1>
+    <h3>"use Strict"</h3>
+    <p id="result"></p>
+    <p id="output"></p>
+    <p id="output-one"></p>
+    <p id="output2"></p>
+
+    <script>
+        "use strict";
+        // a = "hello";
+        // b = 5;
+        const c = 4.56
+        document.getElementById("output-one").innerHTML = c;
+        // document.getElementById("result").innerHTML = a;
+        // document.getElementById("output").innerText = b;
+
+        let be = function myfun(e, f) {
+            // let e = 4;
+            // let f = 5;
+            return (e + f)
+        }
+        myfun(3, 6);
+        document.getElementById("output2").innerHTML = be;
+
+
+
+        let de = "hello";
+        delete(de)
+
+
+    </script>
+</body>
+
+</html>

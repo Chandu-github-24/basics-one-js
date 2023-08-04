@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>default function parameter values</h1>
+    <h1>using function only one number is given <br>
+        if the other number is not given the output will be NAN
+        <br> instead of that pass a default value
+        <h2>two methods</h2>
+        <h4> call and apply </h4>
+    </h1>
+    <h2 id="result"></h2>
+    <h2 id="result1"></h2>
+    <h3 id="output"></h3>
+    <h3 id="output1"></h3>
+    <h3 id="output2"></h3>
+
+    <script>
+        // 1st method using condition if 
+        const add = (a, b) => {
+            if (b === undefined) {
+                b = 4;
+            }
+            return a * b
+        }
+
+        let x = add(5,)
+        document.getElementById("result").innerHTML = x;
+        let y = add(5, 7)
+        document.getElementById("result1").innerHTML = y;
+
+        // 2nd method
+
+
+        let sub = (p, q = 4) => {
+
+            return (p - q);
+        }
+        let z = sub(12,)
+        document.getElementById("output").innerHTML = z;
+
+        //  call and apply 
+
+        //  call
+
+        const person = {
+            registered: function () {
+                return this.name + " is " + this.age + " years old ";
+            
+            }
+        }
+
+
+        const person1 = {
+            name: "kushal",
+            age: 60,
+        };
+
+        document.getElementById("output1").innerHTML = person.registered.call(person1);
+
+        //  apply
+
+        const emp1 = {
+            id: 123,
+            role: "developer",
+            designation: "fullstack",
+
+            work: function (location, shift) {
+                return this.id + " " + this.role + " " + location + " " + shift;
+            }
+        }
+
+
+
+        const emp2 = {
+            id: 3,
+            role: "ops",
+            designation: " manager ",
+        }
+
+        document.getElementById("output2").innerHTML = emp1.work.apply(emp2, ["bangalore", "full"]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

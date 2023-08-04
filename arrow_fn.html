@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>arrow function</h1>
+    <p id="result"></p>
+    <p id="output"></p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <script>
+        function myfun() {
+            return "arrow function syntax  () => {}";
+        }
+        document.getElementById("result").innerHTML = myfun();
+
+
+        const arrow = () => {
+            return "hey";
+        }
+        document.getElementById("output").innerHTML = arrow();
+
+
+        const hellooo = (val) => "hello " + val;
+
+        document.getElementById("output1").innerHTML = hellooo("universe!!!!");
+        document.getElementById("output2").innerHTML = hellooo(" raj ");
+
+
+        // const dog ={
+        //     legs:4,
+        //     type:"pet",
+        //     food:'milk,rice',
+        //     breed:"doberman",
+        // }
+
+        // console.log(dog["type"]);
+        class Car {
+            constructor (name, tyre) {
+                this.name = name;
+                this.tyre = tyre;
+            }
+        }
+
+        const vehicle = new Car("benz","ceat")
+
+        console.log(vehicle.name)
+        console.log(vehicle.tyre)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>function can be used as values and variables one and the same </h1>
+    <h2 id="result"></h2>
+    <h2 id="output"></h2>
+    <h2 id="result1"></h2>
+    <p id="outputs"></p>
+    <p id="outputs1"></p>
+    <h3 id="outputs2"></h3>
+
+    <script>
+
+        let x = adding(6, 4)
+        document.getElementById("result").innerHTML = x;
+        let y = x * 4;
+        document.getElementById("output").innerHTML = y;
+
+        function adding(a, c) {
+            return (a + c)
+        }
+        //  arguments.length conisders the no of aguments recieved by the function
+
+        function employee(ram, geeth, suri) {
+            // return "hellooo!!! all"
+            return arguments.length
+        }
+
+        document.getElementById("result1").innerHTML = employee("a", "b");
+
+
+        function jounrals(novels, magzines) {
+            return "interesting " + novels + " " + magzines;
+        }
+        // document.getElementById("outputs").innerHTML =  jounrals("detective","thriller");
+        document.getElementById("outputs").innerHTML = jounrals.toString();
+
+        //  arrow function 
+        const AAA = (p, q) => {
+            return p + q
+        }
+
+        let a = (x, y) => {
+            return (x + y)
+        }
+
+        let b = a(4, 5)
+        document.getElementById("outputs1").innerHTML = b;
+
+        console.log(AAA(6, 7))
+
+        const cal = (j, f) => {
+            let sum = j + f;
+            let diff = j - f;
+            let tables = j * f;
+            return { sum, diff, tables };
+        }
+
+        let results = cal(4, 3);
+        // document.getElementById("outputs2").innerHTML = results.diff;
+        console.log(results.sum);
+        console.log(results.diff);
+        console.log(results.tables);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>function can be added to object in the below 2 ways </h1>
+    <p id="output"></p>
+    <p id="result"></p>
+    <h2> 4 methods to access the values of all the objects </h2>
+    <p id="theoutput"></p>
+    <h2>objects.values</h2>
+    <p id="objectValues"></p>
+    <h2>json.Stringify()</h2>
+    <h4>any js object can be stringified (converted to a string)
+        with js function JSON.stringify()
+    </h4>
+    <p id="shake"></p>
+    <p id="proto"></p>
+    <p id="prototype"></p>
+    <p id="prototype1"></p>
+    <button onclick="btn()">click here</button>
+    <p id="btnValue"></p>
+
+    <script>
+        //  1st way inside the object 
+        const employee = {
+            emplName: "abhiraj",
+            emplid: 897,
+            emplService: 6,
+            emplDesignation: function () {
+                return this.emplName + " is the name of the employee with id "
+                    + employee.emplid + " their years of service is " + employee["emplService"];
+            },
+        };
+        document.getElementById("output").innerHTML = employee.emplDesignation();
+
+        //  2nd was outside the object 
+        const person = {
+            name: "harish",
+            age: 40,
+            bloodGroup: "B+",
+        };
+        person.address = function () {
+            return (this.name + " is the name and blood group is " + person.bloodGroup).toUpperCase();
+        }
+        document.getElementById("result").innerHTML = person.address();
+
+
+        // 4 methods to access the values of all the objects
+
+        // 1st mthd using person.age or person["age"]
+
+        // 2nd mtd using loops as shown below 
+
+        let a = " "
+        for (let x in person) {
+            a += person[x] + "<br>"
+        }
+        document.getElementById("theoutput").innerHTML = a;
+
+        // 3rd method using object.values
+
+        document.getElementById("objectValues").innerHTML = Object.values(employee);
+
+
+        //  4th methods using JSON.Stringify()
+
+        const milkshake = {
+            name: "apple",
+            spoonsSUGAR: 6,
+            shopName: "lassi shop ",
+
+        };
+        // let stringing = JSON.stringify(milkshake)
+        // document.getElementById("shake").innerHTML = stringing;
+
+        document.getElementById("shake").innerHTML = JSON.stringify(milkshake);
+
+        //  prototype 
+        function mart(fname, lname, gst) {
+            this.fname = fname,
+                this.lname = lname,
+                this.gst = gst
+
+        }
+
+        const reliance = new mart("relaince", "jio", 123);
+        const airtel = new mart("airtel", "prepaid", 654);
+
+        mart.prototype.NoOfWorkers = 4;
+        document.getElementById("proto").innerHTML = Object.values(reliance);
+        // document.getElementById("proto").innerHTML =  JSON.stringify(reliance);
+
+        document.getElementById("prototype").innerHTML = reliance.NoOfWorkers;
+        document.getElementById("prototype1").innerHTML = airtel.NoOfWorkers;
+
+
+
+        //  small mini task all  fresher employees
+
+
+        function worker(name, role, experience) {
+            this.name = name;
+            this.role = role;
+            this.experience = experience;
+
+        }
+
+        const empone = new worker("raj", "deveops", 3)
+        const empTwo = new worker("gurukishan", "program Manager", 0)
+
+        function btn() {
+            let base = 3000;
+            // let expBonus = this.experience * 500;
+
+             let total = (base + empone.experience * 500) + (base + empTwo.experience * 500);
+            // let total = 2 * base + (empone.experience * 500 + empTwo.experience * 500);
+
+            document.getElementById("btnValue").innerHTML = total;
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
