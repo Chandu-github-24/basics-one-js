@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>class</h1>
+    <h2 id="result"></h2>
+    <h2 id="result1"></h2>
+    <h3 id="output"></h3>
+    <h3 id="output1"></h3>
+    <h3 id="output2"></h3>
+
+    <script>
+        class human {
+            constructor(name, YearOfBirth) {
+                this.humanName = name,
+                    this.D_o_b = YearOfBirth
+            }
+
+            age() {
+                const presentYear = new Date();
+                return presentYear.getFullYear() - this.D_o_b;
+                //    return  "hello ";
+            }
+        }
+
+        const person = new human("haridev", 1999)
+        document.getElementById("result").innerHTML = person.humanName + " is now " + person.age()
+            + " years old ";
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="output"></p>
+    <p id="output1"></p>
+    <h1>inheritance in js </h1>
+    <p>this </p>
+    <h3 id="result"></h3>
+    <h2 id="result1"></h2>
+    <script>
+        class vegetables {
+            constructor(farm, lab) {
+                this.farming = farm;
+                this.labProduct = lab;
+            }
+
+            func() {
+                return this.labProduct + " veggies"
+            }
+        }
+        const veggies = new vegetables("onions", "cucumber")
+        document.getElementById("output").innerHTML = veggies.farming + " are not " + veggies.labProduct;
+        document.getElementById("output1").innerHTML = veggies.func();
+
+        class fruits {
+            constructor(chemiclas) {
+                this.chem = chemiclas;
+            }
+            // fertilizer() {
+            //     return this.chem + " are used ";
+            // }
+        }
+
+        class banana extends fruits {
+            constructor(chemiclas, water) {
+                super(chemiclas)
+                this.liquid = water;
+            }
+            potassium() {
+                return this.chem + " along with " + this.liquid;
+            }
+        }
+
+        const sweetsFruits = new banana("k20", " h20");
+        document.getElementById("result").innerHTML = sweetsFruits.potassium();
+
+
+
+        // 2nd example 
+
+        class breakfast {
+            constructor(brunch, dine) {
+                this.morningFood = brunch;
+                this.dinnning = dine;
+            }
+        }
+
+        class lunch extends breakfast {
+            constructor(brunch, dine, snakcs) {
+                super(brunch, dine)
+                this.afternoonFood = snakcs;
+            }
+
+            dinner() {
+                return this.morningFood + this.dinnning + " was good compared to " + this.afternoonFood;
+            }
+        }
+
+        const FOOD = new lunch("rice bath", " ,pulav", " curd rice ")
+
+        // document.getElementById("result1").innerHTML =  FOOD.afternoonFood + FOOD.morningFood;
+        document.getElementById("result1").innerHTML = FOOD.dinner();
+
+    </script>
+</body>
+
+</html>
