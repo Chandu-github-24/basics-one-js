@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Animal(name){
+            this.name = name;
+        }
+        var cat = new Animal("cat");
+        var dog = new Animal("dog");
+        var elephant = new Wild("elephant");
+
+        function checkinstanceof(object,constructor){
+            return object instanceof constructor;
+        }
+    </script>
+</head>
+<body>
+  <div id="output"></div>
+  <div id="output1"></div>
+  <div id="output2"></div>
+  <script>
+        document.getElementById("output").innerHTML = checkinstanceof(cat, Animal);
+        document.getElementById("output1").innerHTML = checkinstanceof(dog, Animal);
+        document.getElementById("output2").innerHTML = checkinstanceof(elephant, Animal);
+
+  </script>
+</body>
+</html>

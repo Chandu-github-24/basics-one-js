@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>instance</h1>
+    <h2>iterating through all the properties</h2>
+    <script>
+        function vehicles(name) {
+            this.name = name;
+        }
+
+        vehicles.prototype.tyres = function () {
+            console.log(this.name + " is the best vehcile ")
+        }
+
+        var v1 = new vehicles("benz");
+        var v2 = new vehicles("lambo");
+
+        v1.tyres();
+        v2.tyres();
+        //  iterating through all ppts
+        function animal(name, type) {
+            this.nameOfanimal = name;
+            this.type = type;
+        }
+
+        animal.prototype.jungle = function () {
+            console.log(this.nameOfanimal + " is very ferocious if triggered and is a " + this.type);
+        }
+
+        function ietrateppts(obj) {
+            for (const x in obj) {
+                // obj.hasOwnProperty(x) its js inbuilt function
+                if (obj.hasOwnProperty(x)) {
+                    console.log(obj[x])
+                }
+            }
+        }
+
+        var myanimal1 = new animal("lion", "carnivore");
+        var myanimal2 = new animal("tiger", "carnivores");
+
+        myanimal1.jungle();
+        ietrateppts(myanimal1);
+        ietrateppts(myanimal2);
+
+    </script>
+</body>
+
+</html>

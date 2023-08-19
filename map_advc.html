@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>map advanced</h1>
+    <h2>filter</h2>
+    <h1>split string</h1>
+    <button onclick="addtwo()">increase by 2</button>
+    <p id="result"></p>
+    <p id="result1"></p>
+    <script>
+        //  increase the value of each by 2 
+
+        let arr = [1, 2, 3, 4, 5];
+
+        function addtwo() {
+            let increasevalue = arr.map((i) => i + 2);
+            // console.log(increasevalue);
+            document.getElementById("result").innerHTML = increasevalue;
+        }
+
+        let multiincrease = arr.map((m) => m * 3);
+        document.getElementById("result1").innerHTML = multiincrease;
+
+
+        let names = ["chandu", "shervai", "nancy"];
+
+        let upper = names.map((i) => i.toUpperCase())
+        console.log(upper);
+
+
+
+        const number1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const even1 = number1.filter((a) => a % 2 == 0);
+        console.log(even1);
+
+        const name = ["shreesha", "sharma", "sharmila", "sneha", "rao", "radika"];
+        // const namewithS = name.filter((name) => name.startsWith("s"));
+        const nameSS = name.filter((nam) => nam.startsWith("s"))
+        console.log(nameSS);
+
+    </script>
+</body>
+
+</html>

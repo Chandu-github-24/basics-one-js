@@ -10,16 +10,58 @@
 <body>
     <h1>reducer</h1>
     <script>
-        let array = [1,2,3,4,5,6,7]
+        let array = [1, 2, 3, 4, 5, 6, 7];
 
-        const sum = array.reduce((accumulater,currentvalue) => accumulater + currentvalue , 0)
+        const sum = array.reduce((accumulater, currentvalue) => accumulater + currentvalue, 0);
 
-        console.log("sum "+ sum)
+        console.log("sum " + sum);
 
-        
-        const multi = array.reduce((accumulater,currentvalue) => accumulater * currentvalue , 1)
 
-        console.log("product "+ multi)
+        const multi = array.reduce((accumulater, currentvalue) => accumulater * currentvalue, 1);
+
+        console.log("product " + multi);
+
+
+
+        const arr1 = [4, 6, 7, 2, 234, 56,];
+
+        const adding = arr1.reduce((acc, cv) => acc + cv, 0);
+        console.log("total sum by adding " + adding);
+
+
+
+
+        const arrr2 = [4, 72, 1, 2, 3, 4, 9, 8, 7, 6, 5];
+
+        const add1 = arrr2.reduce((acc, cv) => acc + cv, 4);
+        console.log(add1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 

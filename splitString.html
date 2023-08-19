@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>split string</h1>
+
+    <label for="">enter a string</label>
+    <input type="text" id="stringid"><br><br>
+    <label for="">enter a delimiter</label>
+    <input type="text" id="delimiterid"><br><br>
+    <button onclick="splitstring()">split</button>
+    <p id="result"></p>
+    <h2>join string</h2>
+    <label for="">enter comma seperated values</label>
+    <input type="text" id="joinid"><br><br>
+    <label for="">enter the seperator</label>
+    <input type="text" id="seperatorid"><br><br>
+    <button onclick="joinstring()">join</button>
+    <p id="output"></p>
+
+    <h1>url slug program</h1>
+    <label for="">enter a string:</label>
+    <input type="text" id="slugid"><br><br>
+    <button onclick="slug()">convert to slug</button>
+    <p id="output1"></p>
+    <script>
+        // split string
+        function splitstring() {
+            const a = document.getElementById("stringid").value;
+            const b = document.getElementById("delimiterid").value;
+            const c = a.split(b);
+            document.getElementById("result").innerHTML = c.join(",");
+        }
+        // join string
+        function joinstring() {
+            let x = document.getElementById("joinid").value.split(',');
+            const y = document.getElementById("seperatorid").value;
+            const z = x.join(y);
+            document.getElementById("output").innerHTML = z;
+        }
+
+        // url slug program 
+        function slug() {
+            let convertingtoslug = document.getElementById("slugid").value;
+            let LC = convertingtoslug.toLowerCase().trim().replace(/\s/g,"-");
+            document.getElementById("output1").innerHTML = LC;
+        }
+
+    </script>
+</body>
+
+</html>

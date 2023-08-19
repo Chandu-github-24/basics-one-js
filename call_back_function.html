@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>call back function ()</h1>
+    <h4 id="output"></h4>
+    <h4 id="result"></h4>
+
+    <script>
+
+        function displayThis(value) {
+            document.getElementById("output").innerHTML = value;
+        }
+
+        function calculator(num1, num2, mycallback) {
+            let sum = num1 + num2;
+            return mycallback(sum);
+        }
+
+        calculator(6, 8, displayThis);
+        // set time out 
+
+        setTimeout(time, 4000)
+
+
+        function time() {
+            document.getElementById("result").innerHTML = "display this message after 4s ";
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>over ride inhertiance mthd</h1>
+    <h2>the child classes mthd replaces the parent classes mthd</h2>
+    <h2>multiple inhertiance of parent class and its override</h2>
+    <script>
+        class employee {
+            constructor(name) {
+                this.name = name;
+            }
+            generateOTP() {
+                return this.name + " is ur otp as well";
+            }
+        }
+
+        class worker extends employee {
+            generateOTP() {
+                return this.name + " overriding the otp "
+            }
+        }
+
+        const worker1 = new worker("john");
+
+        console.log(worker1.generateOTP());
+
+
+        class Color {
+            constructor(color) {
+                this.nameOfcolor = color;
+            }
+            themeColor() {
+                console.log("this is the main theme color");
+            }
+        }
+
+        class WhiteColor extends Color {
+            themeColor() {
+                console.log("this is white color");
+            }
+        }
+        class BlackColor extends Color {
+            themeColor() {
+                console.log("this is black color");
+            }
+        }
+        class redColor extends Color {
+            themeColor() {
+                console.log("this is red color");
+            }
+        }
+
+        const color1 = new WhiteColor("choose your color ");
+        const color2 = new BlackColor("choose your color ");
+        const color3 = new redColor("choose your color ");
+
+
+        color1.themeColor();
+        color2.themeColor();
+        color3.themeColor();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

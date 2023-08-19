@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>static</h1>
+    <p id="result"></p>
+
+    <script>
+        class car {
+            constructor(name) {
+                this.name = name;
+            }
+            static wheels() {
+                return "start the car"
+            }
+        }
+        const vehicle = new car("lambo");
+        document.getElementById("result").innerHTML = car.wheels();
+        // the below code throws error doesnt work coz of static method it can be accessed using class only
+        // document.getElementById("result").innerHTML = vehicle.wheels();
+    </script>
+</body>
+
+</html>

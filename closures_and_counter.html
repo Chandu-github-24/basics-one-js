@@ -9,17 +9,17 @@
 
 <body>
     <h1>closures and counters</h1>
+
+   
     <script>
 
 
 
         function createcounter() {
             let count = 0;
-
             function increment() {
                 count++
                 console.log(count);
-
             }
             return increment;
         }
@@ -37,11 +37,12 @@
 
 
         function greeting(name, greet = "hello") {
-            return function () {
+          return  function() {
                 const currentDate = new Date();
                 console.log(`${greet},${name}`);
                 console.log(`present date and time : - ${currentDate}`);
             };
+          
         }
 
         //  create 2 greeting with sepearate closure forms 

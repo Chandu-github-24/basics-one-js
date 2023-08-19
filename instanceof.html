@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check instance </title>
+    <script>
+        // constructor function
+        function vegetables(name) {
+            this.name = name;
+        }
+
+        // create instances using the constructor
+        var brinjal = new vegetables("brinjal");
+        var onion = new vegetables("onion");
+        var potato = new Fruit("potato");
+
+        // check if an object is instance of a constructor or not 
+        function checkinstance(object, constructor) {
+            return object instanceof constructor;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>check if an object is an instance of a constructor</h1>
+    <h3 id="result"></h3>
+    <h3 id="result1"></h3>
+    <h3 id="result2"></h3>
+
+</body>
+<script>
+    document.getElementById("result").innerHTML = checkinstance(brinjal, vegetables);
+    document.getElementById("result1").innerHTML = checkinstance(onion, vegetables);
+    document.getElementById("result2").innerHTML = checkinstance(potato, vegetables);
+
+</script>
+
+</html>

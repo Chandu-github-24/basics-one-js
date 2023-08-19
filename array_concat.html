@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>concating array</h1>
+    <button onclick="concate()">concate</button>
+    <button onclick="calculatesum()">calculatesum increase by 4</button>
+    <button onclick="reverse()">reverse</button>
+    <p id="result"></p>
+    <script>
+        let arr1 = [1, 3, 5];
+        let arr2 = [2, 4, 6];
+        const concating = arr1.concat(arr2);
+        function concate() {
+            const concating = arr1.concat(arr2);
+            document.getElementById("result").innerHTML = concating;
+        }
+
+        function calculatesum() {
+            const calsum = concating.reduce((acc, cv) => acc + cv, 4);
+            document.getElementById("result").innerHTML = calsum;
+        }
+
+        function reverse(){
+            const reversearaay = concating.reverse(concating);
+            document.getElementById("result").innerHTML = reversearaay;
+        }
+    </script>
+</body>
+
+</html>

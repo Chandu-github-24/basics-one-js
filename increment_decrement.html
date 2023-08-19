@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>increment and decrement IIFE</h1>
+    <div>
+        <button onclick="cn1()" id="plus">+</button>
+        <p id="output">0</p>
+        <button onclick="cn2()" id="minus">-</button>
+    </div>
+    <script>
+
+
+        const incrdecre = (function () {
+            let count = 0;
+            function increment() {
+                count++
+                document.getElementById("output").innerHTML = count;
+
+            }
+            function decrement() {
+                count--
+                document.getElementById("output").innerHTML = count;
+            }
+
+            return {
+                increment,
+                decrement
+            };
+        })();
+        function cn1() {
+            incrdecre.increment()
+        }
+
+        function cn2() {
+            incrdecre.decrement()
+        }
+
+    </script>
+</body>
+
+</html>

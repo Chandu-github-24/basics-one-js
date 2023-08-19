@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>iife input btns add and subtract</h1>
+
+    <label for="">number 1 :-</label>
+    <input type="number" placeholder="enter 1st number" id="numone">
+    <br><br>
+    <label for="">number 2 :-</label>
+    <input type="number" placeholder="enter 2nd number" id="numtwo"><br><br>
+    <button onclick="add()">add</button> <button onclick="sub()">subtract</button>
+
+    <p id="result"></p>
+
+
+    <script>
+        const maths = (function () {
+            function adding(a, b) {
+                a + b;
+                let x = document.getElementById("numone").value;
+                let y = document.getElementById("numtwo").value;
+                let z = parseFloat(x) + parseFloat(y);
+                document.getElementById("result").innerHTML = z;
+
+            }
+
+            function subtracting(a, b) {
+                a - b;
+                let x = document.getElementById("numone").value;
+                let y = document.getElementById("numtwo").value;
+                let z = x - y;
+                document.getElementById("result").innerHTML = z;
+            }
+
+            return {
+                adding,
+                subtracting
+            };
+
+        })();
+
+        function add() {
+            maths.adding();
+        }
+        function sub() {
+            maths.subtracting();
+        }
+
+    </script>
+
+</body>
+
+</html>

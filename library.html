@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>library Mgmt System </h1>
+    <h2>Add a book</h2>
+    <h3>title</h3>
+    <input type="text" id="addtitle">
+    <h3>author</h3>
+    <input type="text" id="addauthor">
+    <h3>ISBN</h3>
+    <input type="text" id="addISBN">
+    <button onclick="addbook()">ADD book</button>
+
+    <h2>Search books</h2>
+
+    <h3>by title</h3>
+    <input type="text" id="searchtitle">
+    <button>search</button>
+    <h3>by author</h3>
+    <input type="text" id="searchauthor">
+    <button>search</button>
+    <h3>ISBN</h3>
+    <input type="text" id="searchISBN">
+
+    <h3>book list</h3>
+    <p id="result"></p>
+    <p id="result1"></p>
+    <script>
+        let mybook = new Set();
+        let myauthor = new Set();
+        let myISBN = new Set();
+
+        function addbook() {
+            let books = document.getElementById("addtitle");
+            let book1 = books.value;
+            mybook.add(book1)
+            document.getElementById("result").innerHTML = book1;
+            let authors = document.getElementById("addauthor");
+            let author1 = authors.value;
+            myauthor.add(author1)
+            document.getElementById("result1").innerHTML = author1;
+        }
+
+
+    </script>
+</body>
+
+</html>

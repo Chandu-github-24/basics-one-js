@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>constructor function example</h1>
+    <h3 id="result"></h3>
+    <script>
+        //  create a constrctor class
+        class animals {
+            constructor(name, food) {
+                this.name = name;
+                this.meals = food;
+            }
+        }
+        //  create instance using the constructor
+        const animal1 = new animals("tiger", "carnivores");
+        const animal2 = new animals("goat", "herbivores");
+        const animal3 = new animals("bear", "omnivores");
+
+        function animalKingdom(livingAnimal) {
+            document.getElementById("result").innerHTML = `name : ${livingAnimal.name} type : ${livingAnimal.meals}`
+        }
+        animalKingdom(animal3);
+        animalKingdom(animal2);
+    </script>
+</body>
+
+</html>
