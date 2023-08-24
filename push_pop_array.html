@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>array push and pop</h1>
+    <h3>push = an element will be added to the array at the last </h3>
+    <h3>pop = last element will be removed from an array </h3>
+
+    <button onclick="pushing()" id="push">push</button>
+    <button onclick="poping()" id="pop">Pop</button>
+    <button onclick="cleararray()" id="clearing">clear</button>
+    <p id="result"></p>
+    <script>
+        let arr = [2, 4, 6, 8];
+        document.getElementById("result").innerHTML = arr;
+
+        function pushing() {
+            let arr1 = arr.push("10")
+            document.getElementById("result").innerHTML = arr;
+
+        }
+        function poping() {
+            let arr2 = arr.pop()
+            document.getElementById("result").innerHTML = arr;
+
+        }
+        function cleararray() {
+            let arr = []
+            document.getElementById("result").innerHTML = arr;
+        }
+    </script>
+</body>
+
+</html>

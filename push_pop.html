@@ -2,50 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         text-align: center;
+      }
+   </style>
 </head>
 
 <body>
-    <h1>push and pop</h1>
-    <p id="demo"></p>
- <button onclick="pusharr()" id ="push">PUSH</button>
- <button onclick="poparr()" id = "pop">POP</button>
- <button onclick="cleararr()" id = "clear">Clear Array</button>
-
-    <script>
-
-        let array = ["a", "b", "c", "d", "e"]
-        document.getElementById("demo").innerHTML = array;
-     
-
-function poparr(){
-     let poparray = array.pop("e");
-    document.getElementById("demo").innerHTML =   alert(`${poparray}`);
-    document.getElementById("demo").innerHTML = array;
-  
-}
-      
-
- function pusharr(){
-
-    let pusharr = array.push("f")
-    document.getElementById("demo").innerHTML =  alert(`${pusharr}`);
-    document.getElementById("demo").innerHTML = array;
-
- }
-
- function cleararr(){
-
-    let array = [];
-    document.getElementById("demo").innerHTML =   alert(` empty ${array}`);
-    document.getElementById("demo").innerHTML = " array is empty ";
- }
+   <h1>push and pop</h1>
 
 
+   <button onclick="pusharr()" id="push">PUSH</button>
+   <button onclick="poparr()" id="pop">POP</button>
+   <button onclick="cleararr()" id="clear">Clear Array</button>
+   <div>
+      <p id="demo">array : []</p>
+   </div>
+   <script>
+      //  initialise an empty array 
+      let array = [];
 
-    </script>
+      function output() {
+         document.getElementById("demo").innerHTML = `array : [${array.join(" , ")}]`
+      }
+
+      function pusharr() {
+         let newitem = prompt("enter the number to push");
+         if (newitem !== 0) {
+            array.push(newitem);
+            output();
+         }
+      }
+      function poparr() {
+         if (array.length > 0) {
+            let a = array.pop();
+            alert("popped item : " + a)
+            output();
+         }
+         else {
+            alert("ntg to pop empty")
+         }
+      }
+
+      function cleararr() {
+         array = [];
+         output();
+      }
+
+   </script>
 </body>
 
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>unshift and shift </h1>
+    <button onclick="unshift()">unshift</button>
+    <button onclick="shift()">shift</button>
+    <button onclick="clearall()">Clear</button>
+    <p id="result">array : []</p>
+    <p id="output"></p>
+
+    <script>
+        let arr = [];
+
+        function output() {
+            document.getElementById("result").innerHTML = "array : " + "[" + arr.join(" , ") + "]";
+            document.getElementById("output").innerHTML = "current length of the array :- " + arr.length;
+        }
+
+        function unshift() {
+            let number = prompt("enter a number to unshift");
+            if (arr !== 0) {
+                arr.unshift(number);
+                output();
+            }
+        }
+        function shift() {
+            if (arr.length > 0) {
+                let A = arr.shift();
+                alert(`${A} is the number shifted`)
+                output()
+            } else {
+                alert("nothing to shift ")
+            }
+        }
+        function clearall() {
+            arr = [];
+            output();
+        }
+    </script>
+</body>
+
+</html>

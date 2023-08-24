@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>array operations</h1>
+    <label for="">add item : </label>
+    <input type="text" name="" id="search">
+    <button onclick="add()">Add</button>
+
+    <br><br>
+    <label for="">add item one: </label>
+    <input type="text" name="" id="search1">
+    <button onclick="addone()">Add-one</button>
+    <p id="result">array : -</p>
+    <button onclick="copy()">copy array</button>
+    <button onclick="combine()">combine array</button>
+    <button onclick="findex()">find index</button>
+    <button onclick="clearing()">clear array</button>
+    <br><br><br>
+
+    <script>
+        let array = [];
+
+        function ouputresult() {
+            document.getElementById("result").innerHTML = `array :- ${array.join(", ")}`
+        }
+
+        function copy() {
+
+        }
+
+        function addone() {
+            const numb = document.getElementById("search1").value;
+            if (array !== 0) {
+                array.push(numb);
+                ouputresult();
+                document.getElementById("search1").value = " ";
+            }
+
+
+        }
+
+        function add() {
+            const number1 = document.getElementById("search").value;
+            if (array !== 0) {
+                array.push(number1);
+                ouputresult();
+                document.getElementById("search").value = "";
+            }
+
+        }
+
+        function combine() {
+            const number2 = document.getElementById("search1").innerHTML;
+
+            ouputresult();
+            const number1 = document.getElementById("search").innerHTML;
+            let combo = number2.concat(number1);
+            document.getElementById("result").innerHTML = "array : -" + combo;
+            // let combined = [2, 3, 4, 5, 6];
+            alert(`combined array ${array.concat(number2)}`);
+            document.getElementById("search").value = "";
+
+        }
+        function findex() {
+
+        }
+        function clearing() {
+            array = [];
+            ouputresult();
+        }
+
+    </script>
+</body>
+
+</html>

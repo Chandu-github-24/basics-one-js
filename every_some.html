@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
+
 <body>
-    
+    <h1>every program</h1>
+    <label for="">enter comma seperated values</label>
+    <input type="text" name="" id="everyid"><br><br>
+    <button onclick="every1()">every click here </button>
+    <p id="result"></p>
+
+    <h1>some program </h1>
+    <label for="">enter comma seperated values</label>
+    <input type="text" name="" id="someid"><br><br>
+    <button onclick="some1()">some click here</button>
+    <p id="output"></p>
+    <script>
+        //every
+        function every1() {
+            let eprogram = document.getElementById("everyid").value.split(",");
+            let everyprogram = eprogram.every(function (number) {
+                return number % 2 === 0;
+            })
+            document.getElementById("result").innerHTML = everyprogram ? "all are even" : "all are not even "
+        }
+
+        // some
+        function some1() {
+            let eprogram = document.getElementById("someid").value.split(",");
+            let everyprogram = eprogram.some(function (number) {
+                return number % 2 === 0;
+            })
+            document.getElementById("output").innerHTML = everyprogram ? "atleast one is even " : "no even "
+        }
+    </script>
 </body>
+
 </html>
