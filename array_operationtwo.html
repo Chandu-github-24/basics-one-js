@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>Array operations</h1>
+    <p id="result">Array : -</p>
+    <button onclick="pushbtn()">Push</button>
+    <button onclick="popbtn()">POP</button>
+    <button onclick="unshiftbtn()">Unshift</button>
+    <button onclick="shiftbtn()">shift</button>
+    <button onclick="insertAtIndexbtn()">insert at index </button>
+    <button onclick="clearBtn()">clear array</button>
+
+    <script>
+        let array = [];
+        function output() {
+            document.getElementById("result").innerHTML = ` Array : - ${array.join(",")}`;
+        }
+
+
+        function pushbtn() {
+            let numberPush = prompt("enter a number");
+            if (numberPush.trim() !== "") {
+                array.push(numberPush);
+                output();
+            }
+            else {
+                document.getElementById("result").innerHTML = "please enter a number "
+            }
+        }
+
+        function popbtn() {
+            if (array.length > 0) {
+                let a = array.pop();
+                alert("popped item : " + a)
+                output();
+            } else {
+                alert("ntg to pop")
+
+            }
+        }
+
+        function unshiftbtn() {
+            let number = prompt("enter a number ");
+            array.unshift(number);
+            output();
+        }
+
+        function shiftbtn() {
+            if (array.length > 0) {
+                let x = array.shift();
+                alert(`shifted element is ${x} `)
+                output();
+            }
+            else {
+                alert("ntg to unshift ");
+            }
+        }
+
+        function insertAtIndexbtn() {
+            let a = prompt("enter a number");
+            let b = prompt("enter the index");
+            array.splice(b, 0, a);
+            output()
+        }
+
+        function clearBtn() {
+            array = [];
+            output();
+        }
+    </script>
+</body>
+
+</html>

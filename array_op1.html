@@ -25,6 +25,59 @@
     <button onclick="CLEAR()">clear array</button>
 
     <script>
+        let array = [];
+
+        function updatedop() {
+            document.getElementById("result").innerHTML = `Array :- ${array.join(" , ")}`
+        }
+
+        function additem() {
+            const resultNum = document.getElementById("arrays").value;
+            // if (array !== 0) {
+            if (resultNum.trim() !== "") {
+                array.push(resultNum);
+                updatedop();
+                document.getElementById("arrays").value = "";
+            } else {
+                alert("please enter an item")
+            }
+        }
+
+        function copied() {
+            // Spread Operator
+            // The JavaScript spread operator (...) 
+            // allows us to quickly copy all or part of an existing array 
+            // or object into another array or object.
+            const copiedArray = [...array];  //  spread operator to copy the array  
+            alert(`array copied ${copiedArray.join(" , ")}`)
+        }
+
+        function combo() {
+            const secondARray = [9, 10, 11];
+            const combinedArray = [...array, ...secondARray,];
+            // spread [...] operator to copy all the array into another element
+
+            alert(`combined Array ${combinedArray}`);
+        }
+
+
+        function FindIndex() {
+            const searchitm = prompt("enter the number");
+            if (searchitm !== null) {
+                const index = array.indexOf(searchitm);
+                if (searchitm !== -1) {
+                    alert(`item ${searchitm} found at ${index}`)
+                }
+                else {
+                    alert(`item ${searchitm} not  found at in the array`)
+                }
+            }
+        }
+
+        function CLEAR() {
+            array = [];
+            updatedop();
+        }
 
     </script>
 </body>
