@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>binary Search</h1>
+    <label for="">Enter the element to search: </label>
+    <input type="number" id="searchbinary">
+    <br>
+    <button onclick="searchelement()">Search</button>
+    <p id="outputs"></p>
+
+    <script>
+        function search(target, array) {
+            let left = 0;
+            let right = array.length - 1;
+            while (left <= right) {
+                const mid = Math.floor((left + right) / 2);
+                if (array[mid] === target) {
+                    return mid;
+                } else if (array[mid] < target) {
+                    left = mid + 1;
+                }
+                else {
+                    right = mid - 1;
+                }
+            }
+            return -1;
+        }
+
+        function searchelement() {
+            var target = Number((document.getElementById("searchbinary")).value);
+            var arr = [2, 3, 6, 7, 12, 23, 56, 78];
+            var binarySeacrh = search(target, arr);
+            if (binarySeacrh !== -1) {
+                document.getElementById("outputs").innerHTML = ` target ${target} found at ${binarySeacrh}`;
+
+            } else {
+                document.getElementById("outputs").innerHTML =
+                    "element not found";
+            }
+        }
+    </script>
+</body>
+
+</html>

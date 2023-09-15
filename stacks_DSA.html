@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> stacks</h1>
+    <label for="">enter an element to push</label>
+    <input type="text" name="" id="pushing"> <br><br>
+    <button onclick="push()">push</button>
+    <br><br>
+    <button onclick="pop()">pop</button>
+    <br><br>
+    <p id="result"></p>
+    <script>
+        let stack = [];
+        function push() {
+
+            const pushes = document.getElementById("pushing").value;
+            stack.push(pushes);
+            document.getElementById("result").innerHTML = "array : -" + stack;
+            document.getElementById("pushing").value = "";
+        }
+
+        function pop() {
+            if (stack.length > 0) {
+                stack.pop()
+                document.getElementById("result").innerHTML = "array : -" + stack;
+
+            } else {
+                document.getElementById("result").innerHTML = "empty";
+
+            }
+        }
+    </script>
+</body>
+
+</html>

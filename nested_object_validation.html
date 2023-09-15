@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>nested objects validation</h1>
+    <h2>person information</h2>
+    <label for="">State</label>
+    <input type="text" value="karnataka" id="stateinput">
+    <br><br>
+    <label for="">City</label>
+    <input type="text" value="bangalore" id="cityinput">
+    <br><br>
+    <label for="">Street</label>
+    <input type="text" value="ML layout" id="streetinput">
+    <br><br>
+    <button onclick="updateAddress()">update</button>
+    <p id="result"></p>
+    <script>
+        //  ex of nested objects to store information about a person and their address 
+        //  storing person info in key value pairs
+        var person = {
+            name: "rahul",
+            age: 24,
+            address: {
+                state: "karnataka",
+                city: "bangalore",
+                street: "RR nagar"
+            }
+        }
+        function addresss() {
+            document.getElementById("result").innerHTML =
+                `  name:- ${person.name}<br> age:-${person.age}, 
+                <br> state : - ${person.address.state},<br> city : -${person.address.city} , <br>
+                street :- ${person.address.street}.`
+        }
+        function updateAddress() {
+            const states = document.getElementById("stateinput").value;
+            const cities = document.getElementById("cityinput").value;
+            const streets = document.getElementById("streetinput").value;
+            // valid inputs
+            if (states.trim() === "" || cities.trim() === "" || streets.trim() === "") {
+
+                alert("please enter valid input")
+                return;
+            }
+            // update address  
+            person.address.state = states;
+            person.address.city = cities;
+            person.address.street = streets;
+
+            // display updated address
+            addresss();
+
+        }
+    </script>
+</body>
+
+</html>

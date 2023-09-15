@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>double deque(double - ended - QUEUE)</h1>
+    <label for="">enter an element to enque at front/rear</label>
+    <input type="text" name="" id="inputq">
+    <button onclick="enqfront()">enqfront</button>
+    <button onclick="enqrear()">enqrear</button>
+    <br><br>
+    <button onclick="dqfront()">Dqfront</button>
+    <button onclick="dqrear()">Dqrear</button>
+    <p id="result"></p>
+
+    <script>
+        stack = [];
+
+        function enqfront() {
+            const enqf = document.getElementById("inputq").value;
+            stack.unshift(enqf);
+            document.getElementById("result").innerHTML = stack;
+            document.getElementById("inputq").value = "";
+        }
+
+        function enqrear() {
+            const enqr = document.getElementById("inputq").value;
+            stack.push(enqr);
+            document.getElementById("result").innerHTML = stack;
+            document.getElementById("inputq").value = "";
+        }
+
+        function dqfront() {
+            if (stack.length > 0) {
+                stack.shift()
+                document.getElementById("result").innerHTML = stack;
+            } else {
+                document.getElementById("result").innerHTML = "empty";
+            }
+
+        }
+        function dqrear() {
+            if (stack.length > 0) {
+                stack.pop()
+                document.getElementById("result").innerHTML = stack;
+            } else {
+                document.getElementById("result").innerHTML = "empty";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

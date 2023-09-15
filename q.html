@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>QUEUE</h1>
+    <label for="">enter an element to enqueue</label>
+    <input type="text" name="" id="enq">
+    <button onclick="enqueue()">enqueue</button><br><br>
+    <button onclick="dequeu()">dequeue</button>
+    <p id="result"></p>
+    <!--  circular queeue it has limit  -->
+    <h2>circular QUEUE</h2>
+    <label for="">enter an element to enqueue</label>
+    <input type="text" name="" id="circularenq">
+    <button onclick="cenqueue()">enqueue</button><br><br>
+    <button onclick="cdequeu()">dequeue</button>
+    <p id="resultone"></p>
+
+    <script>
+        var stack = [];
+        function enqueue() {
+            const inputarr = document.getElementById("enq").value;
+            stack.push(inputarr);
+            document.getElementById("result").innerHTML = ` array :- [${stack}]`;
+            document.getElementById("enq").value = ""
+        }
+        function dequeu() {
+            if (stack.length > 0) {
+                stack.shift();
+                document.getElementById("result").innerHTML = ` array :- [${stack}]`;
+            }
+            else {
+                document.getElementById("result").innerHTML = "element is empty";
+            }
+        }
+        // =====================================
+
+        function cenqueue() {
+
+        }
+
+        function cdequeu() {
+            
+         }
+    </script>
+</body>
+
+</html>

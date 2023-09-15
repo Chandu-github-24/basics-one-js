@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 10%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Virtual Pet pradise</h1>
+    <div>
+        <label for=""> enter pet name :- </label>
+        <input type="text" name="" id="inputname">
+        <button onclick="addbtn()">Add pet</button>
+    </div> <br>
+    <div id="petcontainer">
+
+    </div>
+    <script>
+        const pets = {};
+
+        function addbtn() {
+            const NameofthePet = document.getElementById("inputname").value;
+            if (NameofthePet.trim() !== "") {
+                const pet = {
+                    name: NameofthePet,
+                    happiness: 100,
+                    hungry: 0,
+                };
+                pets[NameofthePet] = pet;
+                displayPets();
+                console.log(pets);
+                document.getElementById("inputname").value = "";
+            }
+        }
+
+        function displayPets() {
+            const petContainer = document.getElementById("petcontainer");
+            petContainer.innerHTML = ""
+            for (const petName in pets) {
+                if (pets.hasOwnProperty(petName)) {
+                    const pet = pets[petName];
+                    const petElement = document.createElement("div");
+                    petElement.innerHTML = `
+                    <img src="https://img.freepik.com/free-vector/little-cute-cat-cartoon-character_1308-138187.jpg"
+                    alt=${pet.name}">
+                    <p>Name: ${pet.name}</p>
+                    <p>Happiness: ${pet.happiness}</p>
+                    <p>hunger: ${pet.hungry}</p>
+                    <button onclick="feedpet('${pet.name}')">Feed</button>
+                    <button onclick="playwithpet('${pet.name}')">Play</button>
+                    `;
+                    petContainer.appendChild(petElement);
+                }
+            }
+        }
+
+        function feedpet(petname) {
+            if (pets[petname]) {
+                pets[petname].hungry = Math.max(0, pets[petname].hungry - 20);
+                pets[petname].happiness += 10;
+                displayPets();
+            }
+        }
+
+        function playwithpet(play) {
+            if (pets[play]) {
+                pets[play].happiness = Math.min(100, pets[play].happiness +20 );
+                pets[play].hungry += 10;
+                displayPets();
+            }
+        }
+    </script>
+</body>
+
+</html>

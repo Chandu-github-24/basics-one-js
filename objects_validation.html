@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>object validation</h1>
+    <h3>key value pairs</h3>
+    <h1>Bike information</h1>
+    <label>bike name :-</label>
+    <input type="text" id="inputbike" placeholder="enter bike name" value="rx100">
+    <br><br>
+    <label>bike model no :-</label>
+    <input type="number" placeholder="bike model no" value="235" id="inputmodel">
+    <br><br>
+
+    <label>company name :-</label>
+    <input type="text" placeholder="enter company name" value="yamaha" id="inputcompany">
+    <br><br>
+
+    <label>showroom price :-</label>
+    <input type="number" placeholder="enter price" value="200" id="inputprice">
+    <br><br>
+
+    <label>mileage :-</label>
+    <input type="number" placeholder="enter mileage " value="40" id="inputmileage">
+    <br><br>
+    <button onclick="updateInfo()">update</button>
+    <p id="result"></p>
+    <script>
+        //  storing bike info in key value pairs
+        const bikes = {
+            name: "rx100",
+            model: 235,
+            company: "yamahaa",
+            price: 200,
+            mileage: 40,
+        };
+        function displayInfo() {
+            document.getElementById("result").innerHTML =
+                `name - ${bikes.name}  <br>
+                 model -  ${bikes.model} <br>
+                 company - ${bikes.company}<br>
+                 price - ${bikes.price}<br>
+                 mileage - ${bikes.mileage}<br>`;
+        }
+        function updateInfo() {
+            const name = document.getElementById("inputbike").value;
+            const model = parseInt(document.getElementById("inputmodel").value);
+            const company = document.getElementById("inputcompany").value;
+            const price = parseFloat(document.getElementById("inputprice").value);
+            const mileage = parseFloat(document.getElementById("inputmileage").value);
+            if (
+                name.trim() === "" ||
+                company.trim() === "" || price < 100 || price > 10000
+                || mileage < 4
+            ) {
+                alert("please enter valid details ");
+                return;
+            }
+            // update student information
+            bikes.name = name;
+            bikes.company = company;
+            bikes.model = model;
+            bikes.price = price;
+            bikes.mileage = mileage;
+            displayInfo()
+        }
+    </script>
+</body>
+
+</html>

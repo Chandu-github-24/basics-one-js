@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Factorial calculator</h1>
+    <script>
+        function factorial(n) {
+
+            if (n == 0 || n == 1) {
+                return 1;
+            }
+            else {
+                return n * factorial(n - 1);
+            };
+        }
+        let number = 5
+        let fact = factorial(number);
+        console.log(fact);
+
+        // document.getElementById("result").innerHTML =
+        //     factorialResult + " is the result of the factorial number " + number;
+        console.log(fact + " is the result of the factorial number " + number);
+
+    </script>
+</body>
+
+</html>

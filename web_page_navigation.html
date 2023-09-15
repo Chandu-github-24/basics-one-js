@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>web Page navigation</h1>
+    <input type="text" name="" id="seacrhid" placeholder="enter url here">
+    <button onclick="visitpage()">Visit Page</button><br><br>
+
+    <h1>Visited pages(Last in, First Out)</h1>
+    <p id="result"></p>
+
+    <button onclick="backbtn()">Go back</button> <br><br>
+
+    <h1>Forward navigation queue(First in, First Out)</h1>
+
+    <button onclick="forwardBtn()">Forward</button>
+    <p id="output"></p>
+
+
+    <script>
+        let visitedpage = [];
+        let forwardpage = [];
+        function visitpage() {
+            const mainpage = document.getElementById("seacrhid").value;
+            const mian = mainpage.trim();
+            if (mian !== "") {
+                visitedpage.push(mian);
+                updatevisitedpage();
+                document.getElementById("seacrhid").value = ""
+                forwardpage.length = 0;
+                updateforwardNavigation();
+            }
+            // backwardpage.push(mainpage);
+            // document.getElementById("result").innerHTML = `<ul><li>${backwardpage}</li></ul>`;
+            // document.getElementById("seacrhid").value = "";
+        }
+
+
+        function backbtn() {
+            let popped = backwardpage.pop();
+            document.getElementById("output").innerHTML = `<ul><li>${backwardpage}</li></ul>`;
+
+        }
+
+        function forwardBtn() {
+
+        }
+
+        function updatevisitedpage() {
+            document.getElementById("result").innerHTML = visitedpage;
+
+        }
+
+        function updateforwardNavigation() {
+            const fpage = document.getElementById("output");
+            fpage.innerHTML = "";
+            for (const x of visitedpage) {
+                const li = document.createElement("li");
+                li.textContent = x;
+                fpage.appendChild(li);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

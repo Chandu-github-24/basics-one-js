@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>partioning</h1>
+    <label for="">enter comma seperated array elements</label>
+    <input type="text" id="firstpartion">
+    <br><br>
+    <label for="">enter pivot value</label>
+    <input type="text" id="pivot">
+    <br><br>
+    <button onclick="pivotpartion()">partition Array</button>
+    <br>
+    <p id="result"></p>
+    <script>
+        function pivotpartion() {
+
+            var inputarray = document.getElementById("firstpartion").value.split(",")
+            var pivots = Number(document.getElementById("pivot").value);
+            var lessthanpivot = [];
+            var greaterthanpivot = [];
+
+            for (let i = 0; i < inputarray.length; i++) {
+                if (Number(inputarray[i] < pivots)) {
+                    lessthanpivot.push(inputarray[i])
+                } else {
+                    greaterthanpivot.push(inputarray[i])
+                }
+            }
+            document.getElementById("result").innerHTML=
+            `less than pivot:- ${lessthanpivot} <br>
+            greater than pivot :- ${greaterthanpivot} `
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>object.keys()</h1>
+    <!-- to get all ppties of an object use object.keys() -->
+    <h2>object ppts name to be found </h2>
+    <button onclick="getppts()">get ppts</button>
+    <p id="result"></p>
+    <script>
+        var shop = {
+            name: "salad",
+            price: "23444",
+            timing: "day",
+            gstno: "GCV23R4",
+        }
+
+        function getppts() {
+            const getProperty = Object.keys(shop)
+            document.getElementById("result").innerHTML = `  ${getProperty.join("<br>")} `;
+        }
+    </script>
+</body>
+
+</html>

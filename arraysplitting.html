@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>array splitting </h1>
+    <label for="">enter comma seperated array elements</label>
+    <input type="text" id="splitArray">
+    <br> <br>
+    <button onclick="split()">split Btn</button>
+
+    <p id="result"></p>
+    <script>
+
+        function split() {
+            const index = document.getElementById("splitArray").value.split(",");
+            var n = Math.ceil(index.length / 2);
+            var firstHalf = index.slice(0, n);
+            var secondHalf = index.slice(n);
+            document.getElementById("result").innerHTML =
+                `first half :- ${firstHalf} <br> seconf  half : - ${secondHalf}`;
+        }
+
+    </script>
+</body>
+
+</html>

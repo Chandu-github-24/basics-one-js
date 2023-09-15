@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Linear Search</h1>
+
+    <label for="">Enter the element to search:</label><input type="number" id="searchoption">
+    <br>
+    <button onclick="updatesearch()">Search</button>
+    <p id="output"></p>
+    <script>
+        function LinearSearch(target, array) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === target) {
+                    return i;
+                }
+
+            }
+            return -1;
+        }
+        function updatesearch() {
+            var target = Number(document.getElementById("searchoption").value);
+            var arr = [1, 4, 2, 5, 24, 545, 63, 11, 46, 9];
+            var index = LinearSearch(target, arr);
+            if (index !== -1) {
+                document.getElementById("output").innerHTML = ` target ${target} found at ${index}`
+            } else {
+                document.getElementById("output").innerHTML = "element not found";
+
+            }
+        }
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Bracket Notation</h1>
+    <h2>accessing ppty </h2>
+    <label for="">enter ppty name:-</label>
+    <input type="text" id="inputppty"><br><br>
+    <button onclick="clickhere()">update</button>
+    <p id="result"></p>
+
+
+
+    <h2>delete a property</h2>
+    <label for="">enter property to remove</label>
+    <input type="text" id="removeppty"><br><br>
+    <button onclick="removebtn()">delete</button>
+    <p id="outputs"></p>
+
+
+
+    <h2>check ppty</h2>
+    <label for="">enter property to check</label>
+    <input type="text" id="checkppty"><br><br>
+    <button onclick="checkbtn()">check</button>
+    <p id="output"></p>
+    <script>
+        var people = {
+            "firstName": "ravi",
+            age: 23,
+            "lastName": "bishnoi",
+        }
+        function clickhere() {
+            var pptyname = document.getElementById("inputppty").value;
+            var value = people[pptyname];
+            document.getElementById("result").innerHTML = ` ${pptyname}:-${value} <br>
+            age :- ${people.age}`;
+        }
+
+        // ---------------------------------
+        var car = {
+            name: "toyota",
+            model: "s10",
+            price: 345600,
+        }
+
+        function removebtn() {
+            const ppty = document.getElementById("removeppty").value;
+            if (car.hasOwnProperty(ppty)) {
+                delete car[ppty];
+                document.getElementById("outputs").innerHTML = `property 
+                ${ppty} removed`;
+            } else {
+                document.getElementById("outputs").innerHTML = `property 
+                ${ppty} not found`;
+            }
+        }
+
+        // =============================
+        var juiceshop = {
+            sugar: "2spoons",
+            fruit: "lemon",
+            ice: true,
+            qty: 2.
+        };
+
+        function checkbtn() {
+            const check = document.getElementById("checkppty").value;
+            var hasppty = juiceshop.hasOwnProperty(check);
+            check.hasOwnProperty()
+            document.getElementById("output").innerHTML = hasppty
+                ? `object has the property ${check}`
+                : `object doesn't have the ppty ${check}`
+        }
+
+    </script>
+</body>
+
+</html>
