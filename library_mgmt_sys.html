@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Library management System</h1>
+    <label>Title:</label>
+    <input type="text" id="titleinput">
+    <label for="">Author:</label>
+    <input type="text" id="authorinput">
+    <label for="">Pages</label>
+    <input type="number" id="pagesinput">
+    <button onclick="addingData()">Add data</button>
+
+    <h1>books in library:</h1>
+    <ul id="result">
+
+    </ul>
+    <script>
+
+
+        class Book {
+            constructor(title, author, pages) {
+                this.title = title;
+                this.author = author;
+                this.pages = pages;
+            }
+        }
+
+        class Library {
+            constructor() {
+                this.books = [];
+            }
+            addBook(title, author, pages) {
+                const book = new Book(title, author, pages);
+                this.books.push(book);
+            }
+
+            deletebook(index) {
+                this.books.splice(index, 1)
+            }
+        }
+
+        const library = new Library();
+
+        function addingData() {
+            const title = document.getElementById("titleinput").value.trim();
+            const Author = document.getElementById("authorinput").value.trim();
+            const Pages = document.getElementById("pagesinput");
+
+            const Pgae = parseFloat(Pages.value)
+
+            if (title !== "" && Author !== "" && !isNaN(Pgae)) {
+                library.addBook(title, Author, Pgae);
+                title.value = "";
+                Author.value = "";
+                Pgae.value = "";
+                updatebookList();
+            }
+        }
+
+        function deletebook(index) {
+            library.deletebook(index);
+            updatebookList();
+        }
+
+
+
+        function updatebookList() {
+            const bookListelement = document.getElementById("result");
+            bookListelement.innerHTML = "";
+
+            // library.books.forEach()=>{
+
+            // }
+            library.books.forEach(function (book, index) {
+
+                // }   book , index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${book.title} by ${book.author} (${book.pages} pages)`
+
+                const deletebtn = document.createElement('button');
+                deletebtn.textContent = "Delete";
+                deletebtn.onclick = () => {
+                    deletebook(index);
+                }
+                listItem.appendChild(deletebtn);
+                bookListelement.appendChild(listItem);
+                document.getElementById("titleinput").value = "";
+                document.getElementById("authorinput").value = "";
+                document.getElementById("pagesinput").value = "";
+
+            }
+            )
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

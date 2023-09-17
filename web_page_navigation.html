@@ -13,61 +13,87 @@
     <button onclick="visitpage()">Visit Page</button><br><br>
 
     <h1>Visited pages(Last in, First Out)</h1>
-    <p id="result"></p>
+    <ul id="result"></ul>
 
     <button onclick="backbtn()">Go back</button> <br><br>
 
     <h1>Forward navigation queue(First in, First Out)</h1>
 
     <button onclick="forwardBtn()">Forward</button>
-    <p id="output"></p>
+    <ul id="output"></ul>
 
 
     <script>
-        let visitedpage = [];
-        let forwardpage = [];
+        let visitedPages = [];
+        let forwardq = [];
         function visitpage() {
-            const mainpage = document.getElementById("seacrhid").value;
-            const mian = mainpage.trim();
-            if (mian !== "") {
-                visitedpage.push(mian);
-                updatevisitedpage();
-                document.getElementById("seacrhid").value = ""
-                forwardpage.length = 0;
-                updateforwardNavigation();
+            const page = document.getElementById("seacrhid");
+            const PageUrl = page.value.trim();
+            if (PageUrl !== "") {
+                visitedPages.push(PageUrl);
+                updateVP()
+                page.value = ""
+                forwardq.length = 0;
+                updateForward();
             }
-            // backwardpage.push(mainpage);
-            // document.getElementById("result").innerHTML = `<ul><li>${backwardpage}</li></ul>`;
-            // document.getElementById("seacrhid").value = "";
         }
 
 
         function backbtn() {
-            let popped = backwardpage.pop();
-            document.getElementById("output").innerHTML = `<ul><li>${backwardpage}</li></ul>`;
-
+            if (visitedPages.length > 1) {
+                forwardq.unshift(visitedPages.pop())
+                const previousPage = visitedPages[visitedPages.length - 1];
+                updateVP();
+                updateForward();
+                alert("navigating to the previous page " + previousPage)
+            }
+            else {
+                alert(`no previous page to go `)
+            }
         }
 
         function forwardBtn() {
-
+            if (forwardq.length > 0) {
+                visitedPages.push(forwardq.shift());
+                const currentPage = visitedPages[visitedPages.length - 1];
+                updateVP();
+                updateForward();
+                alert("navigating to the next page " + currentPage)
+            }
+            else {
+                alert("no next page ")
+            }
         }
 
-        function updatevisitedpage() {
-            document.getElementById("result").innerHTML = visitedpage;
-
-        }
-
-        function updateforwardNavigation() {
-            const fpage = document.getElementById("output");
-            fpage.innerHTML = "";
-            for (const x of visitedpage) {
-                const li = document.createElement("li");
-                li.textContent = x;
-                fpage.appendChild(li);
+        function updateVP() {
+            const vp = document.getElementById("result")
+            vp.innerHTML = "";
+            for (const page of visitedPages) {
+                const li = document.createElement('li');
+                li.textContent = page;
+                vp.appendChild(li);
             }
 
         }
+        function updateForward() {
+            const UF = document.getElementById("output");
+            UF.innerHTML = "";
+            for (const page of forwardq) {
+                const li = document.createElement('li');
+                li.textContent = page;
+                UF.appendChild(li);
+            }
+
+        }
+
+
+
+
+
+
+
     </script>
+
 </body>
 
 </html>

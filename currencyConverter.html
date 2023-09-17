@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>currency converter</h1>
+
+    <label for="amount">Amount :</label>
+    <input type="number" id="amount">
+    <label for="fromCurrency"> from currency :- </label>
+    <select id="fromCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="INR">INR</option>
+    </select>
+
+    <!-- ------------- -->
+    <label for="ToCurrency"> To currency :- </label>
+    <select id="ToCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="INR">INR</option>
+    </select>
+    <button onclick="convertCurrency()">Convert</button>
+
+    <h1>Result :- </h1>
+    <p id="result"></p>
+
+
+    <script>
+        const exchangeRates = {
+            USD: 1,
+            EUR: 1.5,
+            INR: 24,
+        };
+
+        function convertCurrency() {
+            const amtinput = document.getElementById("amount");
+            const fromCurrencyselect = document.getElementById("fromCurrency");
+            const ToCurrencyselect = document.getElementById("ToCurrency");
+            const conversionresult = document.getElementById("result");
+
+            const amt = parseFloat(amtinput.value);
+            const fromCurrency = fromCurrencyselect.value;
+            const ToCurrency = ToCurrencyselect.value;
+
+            if (!isNaN(amt)) {
+                const conversion = amt * (exchangeRates[ToCurrency] / exchangeRates[fromCurrency]);
+                conversionresult.textContent = `${amt} ${fromCurrency} = ${conversion.toFixed(2)}`
+            } else {
+                conversionresult.textContent = "please enter a valid amount ";
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Linked list operation</h1>
+
+    <label for="">Enter data to add/delete from the linked List :- </label>
+    <input type="text" id="inputvalue">
+    <button onclick="Addbtn()">Add Data</button>
+    <button onclick="Deletebtn()">Delete Data</button>
+    <p id="result"></p>
+
+    <script>
+        class Node {
+            constructor(data) {
+                this.data = data;
+                this.next = null;
+            }
+        }
+
+
+        class LinkedList {
+            constructor() {
+                this.head = null;
+            }
+
+            addData(data) {
+                const NewNode = new Node(data);
+                if (!this.head) {
+                    this.head = NewNode;
+                } else {
+                    let current = this.head;
+                    while (current.next) {
+                        current = current.next;
+                    }
+                    current.next = NewNode;
+                }
+            }
+
+            deleteData(data) {
+                if (!this.head) {
+                    return;
+                }
+                if (this.head.data === data) {
+                    this.head = this.head.next;
+                    return;
+                }
+                let current = this.head;
+                while (current.next) {
+                    if (current.next.data === data) {
+                        current.next = current.next.next;
+                        return;
+                    }
+                    current = current.next;
+                }
+            }
+
+
+            displayList() {
+                let current = this.head;
+                let listStr = '';
+                while (current) {
+                    listStr += current.data + ' => ';
+                    current = current.next;
+                }
+                listStr += "null";
+                document.getElementById("result").innerHTML = listStr;
+            }
+        }
+
+        const linkedList = new LinkedList();
+
+        function Addbtn() {
+            const data = document.getElementById("inputvalue").value;
+            linkedList.addData(data);
+            linkedList.displayList();
+            document.getElementById("inputvalue").value = "";
+        }
+        function Deletebtn() {
+            const data = document.getElementById("inputvalue").value;
+            linkedList.deleteData(data);
+            linkedList.displayList();
+            document.getElementById("inputvalue").value = "";
+        }
+
+    </script>
+</body>
+
+</html>

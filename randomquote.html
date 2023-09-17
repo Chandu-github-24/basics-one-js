@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>random quote generator</h1>
+    <button onclick="generator()">Genearte random quote</button>
+    <p id="result"></p>
+    <script>
+
+        const quotes = [
+            { quote: "be happy " + " by author1" },
+            { quote: "be happy1 " + " by author2" },
+            { quote: "be happy2" + " by author3" },
+            { quote: "be happy3" + " by author4" },
+
+        ]
+        function generator() {
+
+            const quoteelement = document.getElementById("result");
+            const randomindex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomindex];
+            quoteelement.textContent = randomQuote.quote;
+        }
+    </script>
+</body>
+
+</html>
